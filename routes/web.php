@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 /** Home **/
 Route::get('/', function(){
-    return view ('general.master');
+    return view ('home');
 });
 
 /** Login */
@@ -27,3 +27,7 @@ Route::view('import','importar')->name('import');
 
 /** Contact */
 Route::view('contactanos','contacts.contact')->name('contact');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
