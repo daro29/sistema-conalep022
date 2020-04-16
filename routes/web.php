@@ -8,7 +8,7 @@ Route::get('/', function(){
 });
 
 /** Login */
-Route::post('login','LoginController@login')->name('login');
+Route::post('login','LoginController@login')                    ->name('login');
 Route::post('import-list-excel', 'ImportController@ImportExcel')->name('datos.import.excel');
 
 /** View PTB */
@@ -28,6 +28,11 @@ Route::view('import','importar')->name('import');
 /** Contact */
 Route::view('contactanos','contacts.contact')->name('contact');
 
+/** Login */
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/admin/login', 'AdministratorsController@showLoginForm')->name('admin.login');
+Route::post('/admin/login', 'AdministratorsController@login');
+Route::get('/admin/area', 'AdministratorsController@secret')->name('admin.secret');
