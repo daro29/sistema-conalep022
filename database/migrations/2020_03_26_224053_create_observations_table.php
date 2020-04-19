@@ -19,12 +19,12 @@ class CreateObservationsTable extends Migration
 
             $table->unsignedBigInteger('alumno_id');
             $table->foreign('alumno_id')
-            ->references('id_matricula')
+            ->references('id')
             ->on('students');
 
             $table->unsignedBigInteger('docente_id');
             $table->foreign('docente_id')
-            ->references('id_docente')
+            ->references('id')
             ->on('teachers');
 
             $table->timestamps();

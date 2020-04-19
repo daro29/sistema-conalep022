@@ -17,7 +17,7 @@ class CreateTeacherHasSubjectsTable extends Migration
 
             $table->unsignedBigInteger('docente_id');
             $table->foreign('docente_id')
-            ->references('id_docente')
+            ->references('id')
             ->on('teachers');
 
             $table->unsignedBigInteger('asignatura_id');

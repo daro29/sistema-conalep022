@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class StudentSeeder extends Seeder
 {
@@ -11,6 +12,11 @@ class StudentSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('students')->insert([
+            'nombre'        => 'darinel',
+            'matricula'     => '16270167',
+            'password'      => bcrypt('123123'),
+        ]);
     }
+
 }
