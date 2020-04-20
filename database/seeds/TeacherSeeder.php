@@ -16,7 +16,7 @@ class TeacherSeeder extends Seeder
         factory(Teacher::class, 2)->create();
 
         DB::table('teachers')->insert([
-            'nombre'    =>  'candado',
+            'name'    =>  'Filogonio',
             'password'  =>  bcrypt('123123'),
         ]);
     }

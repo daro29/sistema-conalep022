@@ -14,13 +14,11 @@ class StudentMiddleware
      * @param  \Closure  $next
      * @return mixed
      */
-
     public function handle($request, Closure $next)
     {
-
-        if (Auth::check() && Auth::user()->role=='student')
+        if (Auth::guard('students')->check() && Auth::user()->role=='student')
             return $next($request);
 
-        return redirect('/estudiante/login');
+        return redirect('/alumno/login');
     }
 }

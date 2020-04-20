@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -15,14 +15,14 @@ class AdministratorsController extends Controller
     // guard del login admin (config|auth)
     protected function guard()
     {
-        return Auth::guard('admin');
+        return Auth::guard('admins');
     }
 
     // funcion que solo permite dejar acceder a los usuarios  si hace sesion
     function __construct()
     {
-        $this->middleware('admin:admin',    ['only' => ['secret']]);
-        $this->middleware('auth:admin',     ['only' => ['secret']]);
+        $this->middleware('admins:admins',    ['only' => ['secret']]);
+        $this->middleware('auth:admins',     ['only' => ['secret']]);
     }
 
     // retorna a vista login que se envia desde la ruta
@@ -43,5 +43,4 @@ class AdministratorsController extends Controller
     {
         return view('home');
     }
-
 }

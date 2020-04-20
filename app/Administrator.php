@@ -15,13 +15,10 @@ class Administrator extends Authenticatable
      *
      * @var array
      */
-    // protected $table = 'administrators';
-
     protected $fillable = [
         'name', 'email', 'password',
     ];
 
-    // protected $guard = 'admin';
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -36,7 +33,5 @@ class Administrator extends Authenticatable
      *
      * @var array
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+
 }

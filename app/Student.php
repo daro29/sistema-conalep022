@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+
 class Student extends Authenticatable
 {
     use Notifiable;
@@ -16,11 +17,12 @@ class Student extends Authenticatable
      * @var array
      */
 
+    protected $table = 'students';
+
     protected $fillable = [
         'name', 'matricula', 'password',
     ];
 
-    // protected $guard = 'admin';
     /**
      * The attributes that should be hidden for arrays.
      *

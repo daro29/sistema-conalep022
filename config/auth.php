@@ -47,20 +47,21 @@ return [
             'hash' => false,
         ],
 
-        'admin' => [
-            'driver'    => 'session',
-            'provider'  => 'admin',
+        'admins' => [
+            'driver' => 'session',
+            'provider' => 'admins',
         ],
 
         'students' => [
-            'driver'    => 'session',
-            'provider'  => 'students',
+            'driver' => 'session',
+            'provider' => 'students',
         ],
 
         'teachers' => [
-            'driver'    => 'session',
-            'provider'  => 'teachers',
+            'driver' => 'session',
+            'provider' => 'teachers',
         ],
+
     ],
 
     /*
@@ -86,19 +87,19 @@ return [
             'model' => App\User::class,
         ],
 
-        'admin' => [
-            'driver'    =>  'eloquent',
-            'model'     =>  App\Administrator::class,
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Administrator::class,
         ],
 
         'students' => [
-            'driver'    =>  'eloquent',
-            'model'     =>  App\Student::class,
+            'driver' => 'eloquent',
+            'model' => App\Student::class,
         ],
 
         'teachers' => [
-            'driver'    =>  'eloquent',
-            'model'     =>  App\Teacher::class,
+            'driver' => 'eloquent',
+            'model' => App\Teacher::class,
         ],
 
         // 'users' => [

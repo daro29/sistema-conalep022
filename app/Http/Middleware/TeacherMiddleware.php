@@ -14,11 +14,12 @@ class TeacherMiddleware
      * @param  \Closure  $next
      * @return mixed
      */
+
     public function handle($request, Closure $next)
     {
         if (Auth::guard('teachers')->check() && Auth::user()->role=='teacher')
-            return $next($request);
+        return $next($request);
 
-        return redirect('/docente/login');
+    return redirect('/docente/login');
     }
 }

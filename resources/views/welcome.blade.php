@@ -70,7 +70,9 @@
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('student.login') }}">Login</a>
+                        <a href="{{ route('admin.login') }}">Login      Administrador</a>
+                        <a href="{{ route('student.login') }}">Login    Estudiante</a>
+                        <a href="{{ route('teacher.login') }}">Login    Docente</a>
 
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}">Register</a>

@@ -16,7 +16,7 @@ class CreateTeachersTable extends Migration
         Schema::create('teachers', function (Blueprint $table) {
 
             $table->bigIncrements('id');
-            $table->string('nombre');
+            $table->string('name');
             $table->string('password')->nullable();
             $table->enum('role', ['admin','student','teacher'])->default('teacher');
             $table->timestamps();

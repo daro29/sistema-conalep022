@@ -14,11 +14,9 @@ class AdminMiddleware
      * @param  \Closure  $next
      * @return mixed
      */
-
     public function handle($request, Closure $next)
     {
-
-        if (Auth::guard('admin')->check() && Auth::user()->role=='admin')
+        if (Auth::guard('admins')->check() && Auth::user()->role=='admin')
             return $next($request);
 
         return redirect('/administrador/login');

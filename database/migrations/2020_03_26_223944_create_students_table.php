@@ -14,11 +14,13 @@ class CreateStudentsTable extends Migration
     public function up()
     {
         Schema::create('students', function (Blueprint $table) {
+
             $table->bigIncrements('id');
             $table->string('matricula');
-            $table->string('nombre');
-            $table->string('password')->nullable();
+            $table->string('name');
+            $table->string('password');
             $table->enum('role', ['admin', 'student', 'teacher'])->default('student');
+
 
             $table->unsignedBigInteger('asignatura_id')->nullable();
             $table->foreign('asignatura_id')

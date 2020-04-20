@@ -15,14 +15,13 @@ class Teacher extends Authenticatable
      *
      * @var array
      */
-    // protected $primarykey = 'id_docente';
 
+    protected $table = 'teachers';
 
     protected $fillable = [
-        'nombre', 'password',
+        'name', 'password',
     ];
 
-    // protected $guard = 'admin';
     /**
      * The attributes that should be hidden for arrays.
      *
