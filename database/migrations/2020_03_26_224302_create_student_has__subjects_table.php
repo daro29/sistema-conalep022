@@ -17,7 +17,7 @@ class CreateStudentHasSubjectsTable extends Migration
 
             $table->unsignedBigInteger('alumno_id');
             $table->foreign('alumno_id')
-            ->references('id_matricula')
+            ->references('id')
             ->on('students');
 
             $table->unsignedBigInteger('asignatura_id');

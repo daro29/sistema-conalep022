@@ -16,7 +16,7 @@ mix.js('resources/js/app.js', 'public/js')
 
 mix.browserSync('http://sistema-conalep022.test/');
 
-if(mix.inProduction())
-{
-    mix.version();
-}
+// if(mix.inProduction())
+// {
+//     mix.version();
+// }

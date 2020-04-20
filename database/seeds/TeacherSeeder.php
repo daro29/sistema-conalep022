@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Database\Seeder;
 use App\Teacher;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class TeacherSeeder extends Seeder
 {
@@ -12,6 +13,11 @@ class TeacherSeeder extends Seeder
      */
     public function run()
     {
-        factory(Teacher::class, 5)->create();
+        factory(Teacher::class, 2)->create();
+
+        DB::table('teachers')->insert([
+            'name'    =>  'Filogonio',
+            'password'  =>  bcrypt('123123'),
+        ]);
     }
 }

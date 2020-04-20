@@ -2,84 +2,51 @@
 
 namespace App\Http\Controllers;
 
-use App\Student;
+use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class StudentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    use AuthenticatesUsers;
+
+    public function username()
     {
-        //
+        return 'matricula';
+    }
+    // guard del login admin (config|auth)
+    protected $guard = 'students';
+
+    protected function guard()
+    {
+        return Auth::guard($this->guard);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    // funcion que solo permite dejar acceder a los usuarios  si hace sesion
+    function __construct()
     {
-        //
+        $this->middleware('students:students',    ['only' => ['secret']]);
+        $this->middleware('auth:students',        ['only' => ['secret']]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    // retorna a vista login que se envia desde la ruta
+    public function showLoginForm()
     {
-        //
+        return view('logins.login-student');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Student  $student
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Student $student)
+
+    public function authenticated()
     {
-        //
+        return redirect('/alumno/area');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Student  $student
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Student $student)
+
+    public function secret()
     {
-        //
+        return view('home');
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Student  $student
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Student $student)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Student  $student
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Student $student)
-    {
-        //
-    }
 }
