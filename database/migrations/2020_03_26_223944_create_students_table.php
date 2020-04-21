@@ -16,30 +16,30 @@ class CreateStudentsTable extends Migration
         Schema::create('students', function (Blueprint $table) {
 
             $table->bigIncrements('id');
-            $table->string('matricula');
+            $table->string('enrollment');
             $table->string('name');
             $table->string('password');
             $table->enum('role', ['admin', 'student', 'teacher'])->default('student');
 
 
-            $table->unsignedBigInteger('asignatura_id')->nullable();
-            $table->foreign('asignatura_id')
-            ->references('id_asignatura')
+            $table->unsignedBigInteger('subjects_id')->nullable();
+            $table->foreign('subjects_id')
+            ->references('id')
             ->on('subjects');
 
-            $table->unsignedBigInteger('grupos_id')->nullable();
-            $table->foreign('grupos_id')
-            ->references('id_grupo')
+            $table->unsignedBigInteger('groups_id')->nullable();
+            $table->foreign('groups_id')
+            ->references('id')
             ->on('groups');
 
-            $table->unsignedBigInteger('asistencia_id')->nullable();
-            $table->foreign('asistencia_id')
-            ->references('id_asistencia')
+            $table->unsignedBigInteger('assistances_id')->nullable();
+            $table->foreign('assistances_id')
+            ->references('id')
             ->on('assistances');
 
-            $table->unsignedBigInteger('semestre_id')->nullable();
-            $table->foreign('semestre_id')
-            ->references('id_semestre')
+            $table->unsignedBigInteger('semesters_id')->nullable();
+            $table->foreign('semesters_id')
+            ->references('id')
             ->on('semesters');
 
             $table->rememberToken();

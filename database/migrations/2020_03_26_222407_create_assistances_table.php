@@ -14,12 +14,12 @@ class CreateAssistancesTable extends Migration
     public function up()
     {
         Schema::create('assistances', function (Blueprint $table) {
-            $table->bigIncrements('id_asistencia');
-            $table->string('asistencia')->nullable();
-            $table->string('retardo')->nullable();
-            $table->string('permiso')->nullable();
-            $table->string('falta_justificada')->nullable();
-            $table->string('falta_injustificada')->nullable();
+            $table->bigIncrements('id');
+            $table->string('assistance')->nullable();
+            $table->string('time_delay')->nullable();
+            $table->string('permissions')->nullable();
+            $table->string('lack_justified')->nullable();
+            $table->string('lack_unwarranted')->nullable();
             $table->timestamps();
         });
     }

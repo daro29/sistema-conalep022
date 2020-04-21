@@ -14,16 +14,16 @@ class CreateObservationsTable extends Migration
     public function up()
     {
         Schema::create('observations', function (Blueprint $table) {
-            $table->bigIncrements('id_observacion');
-            $table->string('descripcion');
+            $table->bigIncrements('id');
+            $table->string('description');
 
-            $table->unsignedBigInteger('alumno_id');
-            $table->foreign('alumno_id')
+            $table->unsignedBigInteger('students_id');
+            $table->foreign('students_id')
             ->references('id')
             ->on('students');
 
-            $table->unsignedBigInteger('docente_id');
-            $table->foreign('docente_id')
+            $table->unsignedBigInteger('teachers_id');
+            $table->foreign('teachers_id')
             ->references('id')
             ->on('teachers');
 

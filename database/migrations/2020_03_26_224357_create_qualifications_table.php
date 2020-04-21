@@ -14,17 +14,17 @@ class CreateQualificationsTable extends Migration
     public function up()
     {
         Schema::create('qualifications', function (Blueprint $table) {
-            $table->bigIncrements('id_calificacion');
-            $table->float('calificacion');
+            $table->bigIncrements('id');
+            $table->float('qualification');
 
-            $table->unsignedBigInteger('alumno_id');
-            $table->foreign('alumno_id')
+            $table->unsignedBigInteger('students_id');
+            $table->foreign('students_id')
             ->references('id')
             ->on('students');
 
-            $table->unsignedBigInteger('asignatura_id');
-            $table->foreign('asignatura_id')
-            ->references('id_asignatura')
+            $table->unsignedBigInteger('subjects_id');
+            $table->foreign('subjects_id')
+            ->references('id')
             ->on('subjects');
 
             $table->timestamps();

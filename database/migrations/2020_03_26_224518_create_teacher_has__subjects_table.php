@@ -15,14 +15,14 @@ class CreateTeacherHasSubjectsTable extends Migration
     {
         Schema::create('teacher_has_subjects', function (Blueprint $table) {
 
-            $table->unsignedBigInteger('docente_id');
-            $table->foreign('docente_id')
+            $table->unsignedBigInteger('teachers_id');
+            $table->foreign('teachers_id')
             ->references('id')
             ->on('teachers');
 
-            $table->unsignedBigInteger('asignatura_id');
-            $table->foreign('asignatura_id')
-            ->references('id_asignatura')
+            $table->unsignedBigInteger('subjects_id');
+            $table->foreign('subjects_id')
+            ->references('id')
             ->on('subjects');
 
             $table->timestamps();
