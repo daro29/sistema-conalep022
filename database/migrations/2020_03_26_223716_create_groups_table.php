@@ -14,17 +14,17 @@ class CreateGroupsTable extends Migration
     public function up()
     {
         Schema::create('groups', function (Blueprint $table) {
-            $table->bigIncrements('id_grupo');
-            $table->string('clave');
+            $table->bigIncrements('id');
+            $table->string('code');
 
-            $table->unsignedBigInteger('carrera_id')->nullable();
-            $table->foreign('carrera_id')
-            ->references('id_carrera')
+            $table->unsignedBigInteger('careers_id')->nullable();
+            $table->foreign('careers_id')
+            ->references('id')
             ->on('careers');
 
-            $table->unsignedBigInteger('asignatura_id')->nullable();
-            $table->foreign('asignatura_id')
-            ->references('id_asignatura')
+            $table->unsignedBigInteger('subjects_id')->nullable();
+            $table->foreign('subjects_id')
+            ->references('id')
             ->on('subjects');
 
             $table->timestamps();

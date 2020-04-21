@@ -14,7 +14,7 @@ class StudentSeeder extends Seeder
     {
         DB::table('students')->insert([
             'name'        => 'darinel',
-            'matricula'     => '16270167',
+            'enrollment'     => '16270167',
             'password'      => bcrypt('123123'),
         ]);
     }

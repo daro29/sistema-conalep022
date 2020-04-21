@@ -7,6 +7,6 @@ use Faker\Generator as Faker;
 
 $factory->define(Group::class, function (Faker $faker) {
     return [
-        'clave' => $faker->unique()->postcode,
+        'code' => $faker->unique()->postcode,
     ];
 });

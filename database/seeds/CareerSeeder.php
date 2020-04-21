@@ -13,15 +13,15 @@ class CareerSeeder extends Seeder
     public function run()
     {
         DB::table('careers')->insert([
-            'nombre' => 'Informatica',
+            'name' => 'Informatica',
         ]);
 
         DB::table('careers')->insert([
-            'nombre' => 'Hospitalidad Turistica',
+            'name' => 'Hospitalidad Turistica',
         ]);
 
         DB::table('careers')->insert([
-            'nombre' => 'Automotriz',
+            'name' => 'Automotriz',
         ]);
     }
 }

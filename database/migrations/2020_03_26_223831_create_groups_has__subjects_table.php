@@ -15,14 +15,14 @@ class CreateGroupsHasSubjectsTable extends Migration
     {
         Schema::create('groups_has_subjects', function (Blueprint $table) {
 
-            $table->unsignedBigInteger('grupo_id');
-            $table->foreign('grupo_id')
-            ->references('id_grupo')
+            $table->unsignedBigInteger('groups_id');
+            $table->foreign('groups_id')
+            ->references('id')
             ->on('groups');
 
-            $table->unsignedBigInteger('asignatura_id');
-            $table->foreign('asignatura_id')
-            ->references('id_asignatura')
+            $table->unsignedBigInteger('subjects_id');
+            $table->foreign('subjects_id')
+            ->references('id')
             ->on('subjects');
 
             $table->timestamps();

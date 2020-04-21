@@ -15,14 +15,14 @@ class CreateCareerHasSubjectsTable extends Migration
     {
         Schema::create('career_has_subjects', function (Blueprint $table) {
 
-            $table->unsignedBigInteger('carrera_id');
-            $table->foreign('carrera_id')
-            ->references('id_carrera')
+            $table->unsignedBigInteger('careers_id');
+            $table->foreign('careers_id')
+            ->references('id')
             ->on('careers');
 
-            $table->unsignedBigInteger('asignatura_id');
-            $table->foreign('asignatura_id')
-            ->references('id_asignatura')
+            $table->unsignedBigInteger('subjects_id');
+            $table->foreign('subjects_id')
+            ->references('id')
             ->on('subjects');
 
             $table->timestamps();

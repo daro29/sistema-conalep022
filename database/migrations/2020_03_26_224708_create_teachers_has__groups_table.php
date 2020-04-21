@@ -15,14 +15,14 @@ class CreateTeachersHasGroupsTable extends Migration
     {
         Schema::create('teachers_has_groups', function (Blueprint $table) {
 
-            $table->unsignedBigInteger('docente_id');
-            $table->foreign('docente_id')
+            $table->unsignedBigInteger('teachers_id');
+            $table->foreign('teachers_id')
             ->references('id')
             ->on('teachers');
 
-            $table->unsignedBigInteger('grupo_id');
-            $table->foreign('grupo_id')
-            ->references('id_grupo')
+            $table->unsignedBigInteger('groups_id');
+            $table->foreign('groups_id')
+            ->references('id')
             ->on('groups');
 
             $table->timestamps();

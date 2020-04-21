@@ -12,19 +12,19 @@ class SubjectSeeder extends Seeder
     public function run()
     {
        factory(Subject::class)->create([
-        'nombre' => 'Matematicas',
+        'name' => 'Matematicas',
        ]);
 
        factory(Subject::class)->create([
-        'nombre' => 'Sistemas Programables',
+        'name' => 'Sistemas Programables',
        ]);
 
        factory(Subject::class)->create([
-        'nombre' => 'Etica',
+        'name' => 'Etica',
        ]);
 
        factory(Subject::class)->create([
-        'nombre' => 'Español',
+        'name' => 'Español',
        ]);
     }
 }

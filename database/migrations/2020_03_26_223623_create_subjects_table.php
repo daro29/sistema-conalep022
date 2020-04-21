@@ -14,18 +14,18 @@ class CreateSubjectsTable extends Migration
     public function up()
     {
         Schema::create('subjects', function (Blueprint $table) {
-            $table->bigIncrements('id_asignatura');
-            $table->string('nombre');
-            $table->string('clave');
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('code');
 
-            $table->unsignedBigInteger('asistencia_id')->nullable();
-            $table->foreign('asistencia_id')
-            ->references('id_asistencia')
+            $table->unsignedBigInteger('assistances_id')->nullable();
+            $table->foreign('assistances_id')
+            ->references('id')
             ->on('assistances');
 
-            $table->unsignedBigInteger('periodo_id')->nullable();
-            $table->foreign('periodo_id')
-            ->references('id_periodo')
+            $table->unsignedBigInteger('periods_id')->nullable();
+            $table->foreign('periods_id')
+            ->references('id')
             ->on('periods');
 
             $table->timestamps();
