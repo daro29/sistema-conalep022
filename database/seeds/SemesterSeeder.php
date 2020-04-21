@@ -13,22 +13,22 @@ class SemesterSeeder extends Seeder
     public function run()
     {
         DB::table('semesters')->insert([
-            'nombre' => 'Primer Semestre',
+            'name' => 'Primer Semestre',
         ]);
         DB::table('semesters')->insert([
-            'nombre' => 'Segundo Semestre',
+            'name' => 'Segundo Semestre',
         ]);
         DB::table('semesters')->insert([
-            'nombre' => 'Tercer Semestre',
+            'name' => 'Tercer Semestre',
         ]);
         DB::table('semesters')->insert([
-            'nombre' => 'Cuarto Semestre',
+            'name' => 'Cuarto Semestre',
         ]);
         DB::table('semesters')->insert([
-            'nombre' => 'Quinto Semestre',
+            'name' => 'Quinto Semestre',
         ]);
         DB::table('semesters')->insert([
-            'nombre' => 'Sexto Semestre',
+            'name' => 'Sexto Semestre',
         ]);
     }
 }
