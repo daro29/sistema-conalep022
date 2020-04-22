@@ -8,7 +8,7 @@ Route::get('/', function(){
 })->name('index');
 
 /** View PTB */
-Route::middleware(['web', 'admins'])->group(function () {
+Route::middleware(['web', 'teachers'])->group(function () {
     route::view('autotronica',  'imports.ptb-Autotronica')          ->name('ptb.autotronica');
     route::view('construccion', 'imports.ptb-Construccion')         ->name('ptb.construccion');
     route::view('hospitalidad', 'imports.ptb-Hospitalidad')         ->name('ptb.hospitalidad');
