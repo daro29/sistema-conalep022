@@ -14,7 +14,7 @@ class StudentController extends Controller
 
     public function username()
     {
-        return 'matricula';
+        return 'enrollment';
     }
     // guard del login admin (config|auth)
     protected $guard = 'students';

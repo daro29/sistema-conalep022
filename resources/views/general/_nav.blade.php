@@ -2,9 +2,10 @@
 
 <nav class="navegacion">
     <ul class="menu">
-        <!-- TITULAR -->
+
         <li class="title-menu"><span class="fa fa-home icon-menu"></span>Inicio</li>
         <!-- TITULAR -->
+
         <li class="item-submenu" menu="0">
             <a href="#"><span class="fas fa-layer-group icon-menu"></span>Capturar</a>
             <ul class="submenu">
@@ -17,6 +18,7 @@
                 <li><a href="{{ route('ptb.mecanica')     }}">ptb-Mecánica Automotriz</a></li>
             </ul>
         </li>
+
 
         <li class="item-submenu" menu="1">
             <a href="#"><span class="fas fa-user-graduate icon-menu"></span>Informacion Escolar</a>
@@ -41,6 +43,15 @@
         </li>
 
         <li><a href="{{ route('contact') }}"><span class="fa fa-envelope icon-menu"></span>Contacto</a></li>
-        <li><a href="#"><span class="fa fa-window-close-o icon-menu"></span>Cerrar Sección</a></li>
+
+        <li><a href="{{ route('logout') }}"
+            onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+        <span class="fa fa-window-close-o icon-menu"></span>Cerrar Sección</a></li>
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
     </ul>
+
 </nav>

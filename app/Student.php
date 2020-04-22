@@ -20,7 +20,7 @@ class Student extends Authenticatable
     protected $table = 'students';
 
     protected $fillable = [
-        'name', 'matricula', 'password',
+        'name', 'enrollment', 'password',
     ];
 
     /**

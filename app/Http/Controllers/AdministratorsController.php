@@ -12,10 +12,13 @@ class AdministratorsController extends Controller
     use AuthenticatesUsers;
 
 
+
     // guard del login admin (config|auth)
+    protected $guard = 'admins';
+
     protected function guard()
     {
-        return Auth::guard('admins');
+        return Auth::guard($this->guard);
     }
 
     // funcion que solo permite dejar acceder a los usuarios  si hace sesion
@@ -28,6 +31,7 @@ class AdministratorsController extends Controller
     // retorna a vista login que se envia desde la ruta
     public function showLoginForm()
     {
+
         return view('logins.login-admin');
     }
 
