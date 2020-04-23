@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Teacher;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -12,23 +13,40 @@ class TeacherController extends Controller
 {
     use AuthenticatesUsers;
 
+
+    protected $guard = 'teacher';
+
     public function username()
     {
         return 'name';
     }
-    // guard del login admin (config|auth)
-    protected $guard = 'teachers';
 
-    protected function guard()
+    public function login(Request $request) //Go web.php then you will find this route
     {
-        return Auth::guard($this->guard);
+         $this->validateLogin($request);
+
+        if ($this->attemptLogin($request)) {
+            return $this->sendLoginResponse($request);
+        }
+
+        return $this->sendFailedLoginResponse($request);
+
+    }
+
+    public function logout(Request $request)
+    {
+        $this->guard('teacher')->logout();
+
+        $request->session()->invalidate();
+
+        return redirect('/');
     }
 
     // funcion que solo permite dejar acceder a los usuarios  si hace sesion
     function __construct()
     {
-        $this->middleware('teachers:teachers',    ['only' => ['secret']]);
-        $this->middleware('auth:teachers',        ['only' => ['secret']]);
+        $this->middleware('teacher:teacher',    ['only' => ['secret']]);
+        $this->middleware('auth:teacher',        ['only' => ['secret']]);
     }
 
     // retorna a vista login que se envia desde la ruta
@@ -36,7 +54,6 @@ class TeacherController extends Controller
     {
         return view('logins.login-teacher');
     }
-
 
     public function authenticated()
     {
@@ -47,6 +64,11 @@ class TeacherController extends Controller
     public function secret()
     {
         return view('home');
+    }
+
+    protected function guard()
+    {
+        return Auth::guard('teacher');
     }
 
 }

@@ -19,6 +19,7 @@ class CreateTeachersTable extends Migration
             $table->string('name');
             $table->string('password')->nullable();
             $table->enum('role', ['admin','student','teacher'])->default('teacher');
+            $table->rememberToken();
             $table->timestamps();
 
         });
