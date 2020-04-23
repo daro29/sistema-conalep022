@@ -5,7 +5,7 @@
 
         <li class="title-menu"><span class="fa fa-home icon-menu"></span>Inicio</li>
         <!-- TITULAR -->
-        @auth('teachers')
+        @auth('teacher')
             <li class="item-submenu" menu="0">
                 <a href="#"><span class="fas fa-layer-group icon-menu"></span>Capturar</a>
                 <ul class="submenu">
@@ -32,9 +32,6 @@
         </li>
 
         @auth
-=======
-
-
 
         <li class="item-submenu" menu="2">
             <a href="#"><span class="fas fa-trophy icon-menu"></span>Logros</a>
@@ -51,7 +48,7 @@
         <!--fin nav del docente-->
 
         <!--nav del admin-->
-        <li class="item-submenu" menu="3">
+        {{-- <li class="item-submenu" menu="3">
             <a href="#"><span class="fas fa-user-graduate icon-menu"></span>Informacion</a>
             <ul class="submenu">
                 <li class="title-menu"><span class="fas fa-chart-line icon-menu"></span>Informacion</li>
@@ -81,7 +78,7 @@
                 <li><a href="#">Logros Semestral</a></li>
                 <!--<li><a href="#">Dominios</a></li>-->
             </ul>
-        </li>
+        </li> --}}
 
         <!--fin nav admin-->
 

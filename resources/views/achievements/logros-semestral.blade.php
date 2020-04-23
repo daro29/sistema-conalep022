@@ -1,4 +1,4 @@
-@extends('general.master')
+@extends('general._master')
 
 @section('title', 'Parcial')
 
