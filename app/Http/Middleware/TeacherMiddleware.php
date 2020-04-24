@@ -17,9 +17,9 @@ class TeacherMiddleware
 
     public function handle($request, Closure $next)
     {
-        if (Auth::guard('teachers')->check())
+        if (Auth::guard('teacher')->check())
             return $next($request);
 
-    return redirect('/docente/login');
+        return redirect('/docente/login');
     }
 }

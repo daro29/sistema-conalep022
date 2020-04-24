@@ -14,9 +14,11 @@
         </span>
     @enderror
 </div>
-
+<div class="barra">
+    <div class="barra_azul" id="barra_estado">
+        <span></span>
+    </div>
+</div>
 <br>
 <input class="btn btn-outline-success  btn-lg btn-block" type="submit" value="Importar">
 <a class="btn btn-lg btn-light btn-block" href="#">Regresar</a>
-
-
