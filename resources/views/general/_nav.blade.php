@@ -4,7 +4,8 @@
     <ul class="menu">
 
         <li class="title-menu"><span class="fa fa-home icon-menu"></span>Inicio</li>
-        <!-- TITULAR -->
+
+        {{-- Importar PTB --}}
         @auth('teacher')
         <li class="item-submenu" menu="0">
             <a href="#"><span class="fas fa-layer-group icon-menu"></span>Capturar</a>
@@ -20,89 +21,67 @@
         </li>
         @endauth
 
+        {{-- Información escolar --}}
+        @auth('student')
         <li class="item-submenu" menu="1">
-            <a href="#"><span class="fas fa-user-graduate icon-menu"></span>Informacion Escolar</a>
+            <a href="#"><span class="fas fa-user-graduate icon-menu"></span>Información Escolar</a>
             <ul class="submenu">
-                <li class="title-menu"><span class="fas fa-chart-line icon-menu"></span>Informacion Escolar</li>
+                <li class="title-menu"><span class="fas fa-chart-line icon-menu"></span>Información Escolar</li>
                 <li class="go-back">Atras</li>
-                <li><a href="#">Boletas</a></li>
                 <li><a href="#">Calificaciones Parciales</a></li>
-                <!--<li><a href="#">Dominios</a></li>-->
+                <li><a href="#">Boletas</a></li>
             </ul>
         </li>
+        @endauth
 
+        {{-- Logros --}}
         <li class="item-submenu" menu="2">
             <a href="#"><span class="fas fa-trophy icon-menu"></span>Logros</a>
             <ul class="submenu">
                 <li class="title-menu"><span class="fas fa-medal icon-menu"></span>Logros</li>
                 <li class="go-back">Atras</li>
-                <li><a href="{{ route('logros.parcial') }}">Parcial</a></li>
+                <li><a href="{{ route('logros.parcial') }}">Parciales</a></li>
                 <li><a href="{{ route('logros.semestral') }}">Semestral</a></li>
             </ul>
         </li>
-        <!--fin igual docente admin-->
-
+        @auth('admin')
+        {{-- Avisos Admin --}}
+        <li class="item-submenu" menu="3">
+            <a href="#"><span class="fas fa-envelope icon-menu"></span>Enviar Avisos</a>
+            <ul class="submenu">
+                <li class="title-menu"><span class="fas fa-envelope-open icon-menu"></span>Avisos</li>
+                <li class="go-back">Atras</li>
+                <li><a href="#">Aviso Docentes</a></li>
+                <li><a href="#">Aviso Alumnos</a></li>
+            </ul>
+        </li>
+        {{-- Listar usuarios Admin --}}
+        <li class="item-submenu" menu="4">
+            <a href="#"><span class="fas fa-list-ol icon-menu"></span>Lista Usuarios</a>
+            <ul class="submenu">
+                <li class="title-menu"><span class="fas fa-list-ul icon-menu"></span>Lista Usuarios</li>
+                <li class="go-back">Atras</li>
+                <li><a href="#">Listar Alumnos</a></li>
+                <li><a href="#">Listar Docentes</a></li>
+            </ul>
+        </li>
+       {{-- Subir Archivos Admin --}}
+        <li class=" item-submenu" menu="5">
+            <a href="#"><span class="fas fa-file-upload icon-menu"></span>Subir Archivos</a>
+            <ul class="submenu">
+                <li class="title-menu"><span class="fas fa-file-upload icon-menu"></span>Subir Archivos</li>
+                <li class="go-back">Atras</li>
+                <li><a href="#">Subir Archivo</a></li>
+                <li><a href="#">Carreras</a></li>
+            </ul>
+        </li>
+        @endauth
 
         <li><a href="{{ route('contact') }}"><span class="fa fa-envelope icon-menu"></span>Contacto</a></li>
 
-        <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
-
-        <!--nav del admin-->
-        <li class="item-submenu" menu="3">
-            <a href="#"><span class="fas fa-user-graduate icon-menu"></span>Informacion</a>
-            <ul class="submenu">
-                <li class="title-menu"><span class="fas fa-chart-line icon-menu"></span>Informacion</li>
-                <li class="go-back">Atras</li>
-                <li><a href="#">Subir Archivo</a></li><!--admin subir archivo general de los alumnos-->
-                <li><a href="#">Aviso Docentes</a></li> <!--admin subir avisos  los docente-->
-                <li><a href="#">Aviso Alumnos</a></li> <!--admin subir avisos  los alumnos-->
-                <li><a href="#">Carreras</a></li> <!--admin crear editar eliminar carreras-->
-
-            <li class="item-submenu" menu="4">
-              <a href="#"><span class="fas fa-user-graduate icon-menu"></span>Lista Usuarios</a>
-                <ul class="submenu">
-                <li class="title-menu"><span class="fas fa-chart-line icon-menu"></span>Lista Usuarios</li>
-                <li class="go-back">Atras</li>
-                <li><a href="#">Listar Alumnos</a></li><!--listar alumno-->
-                <li><a href="#">Listar Docentes</a></li><!-- listar docente-->
-            </ul>
-        </li>
-        
-
-
-        <!--igual docente admin-->
-        <li class="item-submenu" menu="5">
-              <a href="#"><span class="fas fa-user-graduate icon-menu"></span>Logros</a>
-                <ul class="submenu">
-                <li class="title-menu"><span class="fas fa-chart-line icon-menu"></span>Logros</li>
-                <li class="go-back">Atras</li>
-                <li><a href="route('logros.parcial') ">Logros Parciales</a></li> <!--mostrar logros-->
-                <li><a href="route('logros.semestral')">Logros Semestral</a></li> <!--mostrar loagros semestral-->
-            </ul>
-        </li> 
-         <!--fin igual docente admin-->
-    
-     <!--fin nav admin-->
-
-
-
-
-
-        @auth('students')
-            <li><a href="{{ route('contact') }}"><span class="fa fa-envelope icon-menu"></span>Contacto</a></li>
-        @endauth
-
-        <li><a href="{{ route('logout') }}"
+        <a class="dropdown-item fas fa-window-close icon-menu" href="{{ route('logout') }}"
             onclick="event.preventDefault();
-
-                document.getElementById('logout-form').submit();">
-                <span class="fa fa-window-close-o icon-menu"></span>Cerrar Sección</a>
-        </li>
-
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-            @csrf
-        </form>
-
-    </ul>
-
+                        document.getElementById('logout-form').submit();">
+            <span>Cerrar Sesión</span>
+        </a>
 </nav>

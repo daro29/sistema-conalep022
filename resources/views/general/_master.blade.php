@@ -31,10 +31,12 @@
     <header>
         {{-- @if (auth()->check() --}}
         @auth()
-            <a id="navbarDropdown" class="btn btn-outline-light float-right my-2 my-sm-0 nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                {{ auth()->user()->name  }} <span class="caret"></span>
 
+            <a id="navbarDropdown" class="btn btn-outline-light float-right my-2 my-sm-0 nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+              {{ auth()->user()->name  }} <span class="caret"></span>
             </a>
+
+            <h2 class="float-right text-white mr-3 my-2 my-sm-0">Bienvenido:</h2>
 
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item btn btn-outline-light float-right my-2 my-sm-0" href= "{{ route('logout') }}"
