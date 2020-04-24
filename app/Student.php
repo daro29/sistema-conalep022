@@ -2,10 +2,8 @@
 
 namespace App;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Student extends Authenticatable
 {
@@ -17,7 +15,7 @@ class Student extends Authenticatable
      * @var array
      */
 
-    protected $table = 'students';
+    protected $guard = 'student';
 
     protected $fillable = [
         'name', 'enrollment', 'password',

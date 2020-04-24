@@ -20,6 +20,6 @@ class TeacherMiddleware
         if (Auth::guard('teacher')->check())
             return $next($request);
 
-    return redirect('/docente/login');
+        return redirect('/docente/login');
     }
 }

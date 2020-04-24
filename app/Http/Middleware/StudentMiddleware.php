@@ -16,7 +16,7 @@ class StudentMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::guard('students'))
+        if (Auth::guard('student'))
             return $next($request);
 
         return redirect('/alumno/login');
