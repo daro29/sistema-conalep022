@@ -41,8 +41,6 @@ main{
 
 .conteiner-datos{
 	flex: 100%;
-	/*float: left;*/
-	/*margin: auto;*/
 	max-width: 500px;
 	padding: 3px 10px;
 	width: 100%;
@@ -56,8 +54,6 @@ main{
 
 .conteiner-avisos{
 	flex: 100%;
-	/*float: right;*/
-	/*margin: auto;*/
 	max-width: 500px;
 	padding: 3px 10px;
 	width: 100%;
@@ -70,7 +66,7 @@ main{
 
 body{
 	font-family: 'Open sans';
-	background: #E8E8E8;
+	background: rgb(247, 243, 243);
 }
 
 header{
@@ -147,7 +143,6 @@ header #button-menu{
   	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
 	content: '\f105';
-
 	float: right;
 	color: #C5C5C5;
 }
