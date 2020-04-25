@@ -8,14 +8,13 @@ Route::get('/', function(){
 })->name('index');
 
 /** View PTB */
-Route::middleware(['teachers','auth:teacher'])->group(function () {
-    route::view('autotronica',  'imports.ptb-Autotronica')          ->name('ptb.autotronica');
-    route::view('construccion', 'imports.ptb-Construccion')         ->name('ptb.construccion');
-    route::view('hospitalidad', 'imports.ptb-Hospitalidad')         ->name('ptb.hospitalidad');
-    route::view('informatica',  'imports.ptb-Informatica')          ->name('ptb.informatica');
-    route::view('mecanica',     'imports.ptb-Mecanica-Automotriz')  ->name('ptb.mecanica');
+Route::middleware(['teachers','auth:teacher'])->name('ptb.')->group(function () {
+    route::view('autotronica',  'imports.ptb-Autotronica')          ->name('autotronica');
+    route::view('construccion', 'imports.ptb-Construccion')         ->name('construccion');
+    route::view('hospitalidad', 'imports.ptb-Hospitalidad')         ->name('hospitalidad');
+    route::view('informatica',  'imports.ptb-Informatica')          ->name('informatica');
+    route::view('mecanica',     'imports.ptb-Mecanica-Automotriz')  ->name('mecanica');
 });
-
 
 /** achievements **/
 route::view('logros-Parcial',   'achievements.logros-parcial')      ->name('logros.parcial');
@@ -30,21 +29,26 @@ Route::view('contactanos','contacts.contact')->name('contact');
 
 /** Login */
 Auth::routes(['register' => false]);
-
+Route::get('/home', 'HomeController@index')->name('home');
 
 /* login admin */
-Route::get('/administrador/login',  'Auth\LoginAdminController@showLoginForm')       ->name('admin.login');
-Route::post('/administrador/login', 'Auth\LoginAdminController@login')               ->name('admin.login');
-Route::get('/administrador/area',   'Auth\LoginAdminController@secret')              ->name('admin.secret');
+Route::prefix('administrador')->namespace('Auth')->name('admin.')->group(function(){
+    Route::get('login',  'LoginAdminController@showLoginForm')      ->name('login');
+    Route::post('login', 'LoginAdminController@login')              ->name('login');
+    Route::get('area',   'LoginAdminController@secret')             ->name('secret');
+});
 
 /* login Student */
-Route::get('/alumno/login',         'Auth\LoginStudentController@showLoginForm')    ->name('student.login');
-Route::post('/alumno/login',        'Auth\LoginStudentController@login')            ->name('student.login');
-Route::get('/alumno/area',          'Auth\LoginStudentController@secret')           ->name('student.secret');
-
+Route::prefix('alumno')->namespace('Auth')->name('student.')->group(function(){
+    Route::get('login',         'LoginStudentController@showLoginForm')    ->name('login');
+    Route::post('login',        'LoginStudentController@login')            ->name('login');
+    Route::get('area',          'LoginStudentController@secret')           ->name('secret');
+});
 /** Login teacher */
-Route::get('/docente/login',        'Auth\LoginTeacherController@showLoginForm')   ->name('teacher.login');
-Route::post('/docente/login',       'Auth\LoginTeacherController@login')           ->name('teacher.login');
-Route::get('/docente/area',         'Auth\LoginTeacherController@secret')          ->name('teacher.secret');
+Route::prefix('docente')->namespace('Auth')->name('teacher.')->group(function(){
+    Route::get('login',        'LoginTeacherController@showLoginForm')   ->name('login');
+    Route::post('login',       'LoginTeacherController@login')           ->name('login');
+    Route::get('area',         'LoginTeacherController@secret')          ->name('secret');
+});
 
-Route::get('/home', 'HomeController@index')->name('home');
+

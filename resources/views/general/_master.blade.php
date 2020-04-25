@@ -30,25 +30,23 @@
 
     <header>
         {{-- @if (auth()->check() --}}
-        @auth()
+        @auth
+        <a id="navbarDropdown" class="btn btn-outline-light float-right my-2 my-sm-0 nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+            {{ auth()->user()->name }} <span class="caret"></span>
+        </a>
 
-            <a id="navbarDropdown" class="btn btn-outline-light float-right my-2 my-sm-0 nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-              {{ auth()->user()->name  }} <span class="caret"></span>
+        <h4 class="float-right text-white mr-5 my-3 my-sm-0">Bienvenido:</h4>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item btn btn-outline-light float-right my-2 my-sm-0" href= "{{ route('logout') }}"
+                onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                    {{ __('Cerrar Sesión') }}
             </a>
 
-            <h2 class="float-right text-white mr-3 my-2 my-sm-0">Bienvenido:</h2>
-
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item btn btn-outline-light float-right my-2 my-sm-0" href= "{{ route('logout') }}"
-                    onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">
-                        {{ __('Cerrar Sesión') }}
-                </a>
-
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                </form>
-            </div>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+        </div>
         @endauth
 
         {{-- @endif --}}

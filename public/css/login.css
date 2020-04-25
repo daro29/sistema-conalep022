@@ -1,0 +1,49 @@
+*{
+ color: #ffffff;
+ font-family: 'PT Sans Narrow', sans-serif;
+}
+.bg {
+    /* background: url('/img/teacher-login.svg') no-repeat; width: 100%; height: 100vh; */
+    /* background-color: rgba(15, 138, 75, 0.6); */
+    background: linear-gradient(rgba(21, 20, 20, 0.58), rgba(7, 7, 7, 0.7)), url(../img/admin-login.svg);
+    width: 100vh;
+    height: 100%;
+    top:0;
+    left:0;
+    position:fixed;
+    z-index: -1;
+}
+
+.form-container{
+border: 1px solid #ffffff;
+padding: 50px 60px;
+margin-top: 20vh;
+-webkit-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+-moz-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+}
+
+label{
+    font-size: 20px;
+}
+
+.btn-success {
+    color: #f7f7f7 !important;
+    background-color: #077061ba !important;
+    border-color: #dee2e6 !important;
+}
+
+.btn-success:hover {
+    color: #f7f7f7 !important;
+    background-color: #037067 !important;
+    border-color: #dee2e6 !important;
+}
+
+.forgot a{
+    font-size: 17px;
+    color: #ffffff;
+}
+
+.forgot a:hover{
+    color: #05c5a5;
+}
