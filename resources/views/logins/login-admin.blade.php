@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login-Administrador</title>
-    <link href="{{ asset('css/login.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/login/login-admin.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap">
@@ -21,9 +21,9 @@
             <div class="col-12 col-sm-10 col-lg-6 mx-auto">
                 <div class="content-all">
                     <!-- formulario -->
-                    <form class="form-container" action="{{ route('student.login') }}" method="POST">
+                    <form class="form-container" action="{{ route('admin.login') }}" method="POST">
                         @csrf
-                        <h1>Login Administrador</h1>
+                        <h1>Iniciar Sesión</h1>
                         <div class="form-group">
                             <label class="label" for="email">Correro Electronico:</label>
                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Ingresa tu correo electronico" autofocus>
@@ -46,7 +46,7 @@
                             <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                             <label class="form-check-label" for="remember">Recuerdame</label>
                         </div>
-                        <button type="submit" class="btn btn-success btn-block">Iniciar Sesión</button>
+                        <button type="submit" class="btn btn-success btn-block">Entrar</button>
                         <div class="d-flex justify-content-center forgot">
                             @if (Route::has('password.request'))
                             <a class="btn btn-link" href="{{ route('password.request') }}">

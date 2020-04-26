@@ -1,5 +1,5 @@
 @extends('general._master')
-@section('title','home')
+@section('title','Home')
 @section('content')
 <div class="container">
     <div class="row">
