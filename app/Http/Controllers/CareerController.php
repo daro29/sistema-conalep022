@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Career;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Http\Requests\SaveCareerRequest;
+
 
 class CareerController extends Controller
 {
@@ -14,8 +16,8 @@ class CareerController extends Controller
      */
     public function index()
     {
-        $careers = Career::latest()->paginate();
-        return view('administrators.registry.index', compact('careers'));
+        $careers = Career::latest()->paginate(4);
+        return view('administrators.careers.index', compact('careers'));
     }
 
     /**
@@ -23,9 +25,9 @@ class CareerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Career $career)
     {
-        //
+        return view('administrators.careers.create',compact('career'));
     }
 
     /**
@@ -34,9 +36,11 @@ class CareerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SaveCareerRequest $request)
     {
-        //
+        Career::create($request->validated());
+
+        return redirect()->route('career.index')->with('status','Carrera creada con exito');
     }
 
     /**
@@ -45,9 +49,9 @@ class CareerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Career $career)
     {
-        //
+        return view('administrators.careers.show', compact('career'));
     }
 
     /**
@@ -56,9 +60,9 @@ class CareerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Career $career)
     {
-        //
+        return view('administrators.careers.edit', compact('career'));
     }
 
     /**
@@ -68,9 +72,11 @@ class CareerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Career $career, SaveCareerRequest $request)
     {
-        //
+        $career->update($request->validated());
+
+        return redirect()->route('career.show', $career)->with('status', 'Carrera editada exitosamente');
     }
 
     /**
@@ -79,8 +85,10 @@ class CareerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Career $career)
     {
-        //
+        $career->delete();
+
+        return redirect()->route('career.index')->with('status','La carrera se elimino exitosamente');
     }
 }

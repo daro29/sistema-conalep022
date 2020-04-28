@@ -15,7 +15,8 @@ class CreateCareersTable extends Migration
     {
         Schema::create('careers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name')->nullable();
+            $table->string('name');
+           $table->mediumText('description')->nullable();
             $table->timestamps();
         });
     }

@@ -52,5 +52,7 @@ Route::prefix('docente')->namespace('Auth')->name('teacher.')->group(function(){
 });
 
 Route::middleware(['admins', 'auth:admin'])->group(function(){
-    Route::resource('administrar/carreras', 'CareerController')->names('career');
+    Route::resource('administrar/carrera', 'CareerController')
+    ->parameters(['carrera' => 'career'])
+    ->names('career');
 });
