@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Career;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CareerController extends Controller
 {
@@ -14,7 +14,8 @@ class CareerController extends Controller
      */
     public function index()
     {
-        //
+        $careers = Career::latest()->paginate();
+        return view('administrators.registry.index', compact('careers'));
     }
 
     /**
@@ -41,10 +42,10 @@ class CareerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Career  $career
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Career $career)
+    public function show($id)
     {
         //
     }
@@ -52,10 +53,10 @@ class CareerController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Career  $career
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Career $career)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +65,10 @@ class CareerController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Career  $career
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Career $career)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +76,10 @@ class CareerController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Career  $career
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Career $career)
+    public function destroy($id)
     {
         //
     }

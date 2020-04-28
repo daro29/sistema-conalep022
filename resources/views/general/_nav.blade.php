@@ -33,10 +33,8 @@
             </ul>
         </li>
         @endauth
-        @auth
-            <li><a href="#"><span class="fas fa-file-import icon-menu"></span>Subir Archivo</a></li>
-        @endauth
-        {{-- Logros --}}
+    |   @auth
+         {{-- Logros --}}
         <li class="item-submenu" menu="2">
             <a href="#"><span class="fas fa-trophy icon-menu"></span>Logros</a>
             <ul class="submenu">
@@ -46,7 +44,11 @@
                 <li><a href="{{ route('logros.semestral') }}">Semestral</a></li>
             </ul>
         </li>
+
+        @endauth
+
         @auth('admin')
+            <li><a href="#"><span class="fas fa-file-import icon-menu"></span>Subir Archivo</a></li>
         {{-- Avisos Admin --}}
         <li class="item-submenu" menu="3">
             <a href="#"><span class="fas fa-envelope icon-menu"></span>Enviar Avisos</a>
@@ -69,11 +71,12 @@
         </li>
        {{-- Subir Archivos Admin --}}
         <li class=" item-submenu" menu="5">
-            <a href="#"><span class="fas fa-file-upload icon-menu"></span>Registro</a>
+            <a href="#"><span class="fas fa-file-upload icon-menu"></span>Administrar</a>
             <ul class="submenu">
                 <li class="title-menu"><span class="fas fa-file-upload icon-menu"></span>Registro</li>
                 <li class="go-back">Atras</li>
-                <li><a href="#">Carreras</a></li>
+                <li><a href="{{ route('career.index') }}">Carreras</a></li>
+                <li><a href="#">Grupos</a></li>
             </ul>
         </li>
         @endauth

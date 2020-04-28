@@ -51,4 +51,6 @@ Route::prefix('docente')->namespace('Auth')->name('teacher.')->group(function(){
     Route::get('area',         'LoginTeacherController@secret')          ->name('secret');
 });
 
-
+Route::middleware(['admins', 'auth:admin'])->group(function(){
+    Route::resource('administrar/carreras', 'CareerController')->names('career');
+});

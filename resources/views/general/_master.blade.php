@@ -23,7 +23,7 @@
 
 </head>
 <body>
-
+    <div id="app" class="d-flex flex-column h-screen justify-content-between">
     <main class="pt-3">
         @yield('content')
     </main>
@@ -58,5 +58,6 @@
     <script src="{{ asset ('js/main.js') }}"></script>
      <script src="{{ asset ('js/lineas.js') }}" charset="utf-8"></script>
     <script src="https://kit.fontawesome.com/ad2035d795.js" crossorigin="anonymous"></script>
+    </div>
 </body>
 </html>
