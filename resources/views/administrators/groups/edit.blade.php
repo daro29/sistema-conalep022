@@ -9,11 +9,11 @@
         <div class="col-12 col-sm-10 col-lg-7 mx-auto">
             <div class="content-all">
                 @auth('admin')
-                <form class="px-4 shadow-lg p-3 mb-5 bg-white rounded p-3 mb-5 bg-white rounded" action="{{ route('career.update', $career) }}" method="POST">
-                    <h1 class="display-6 text-center">Editar Carrera</h1>
-                    <hr>
+                <form class="px-4 shadow-lg p-3 mb-5 bg-white rounded p-3 mb-5 bg-white rounded" action="{{ route('group.update', $group) }}" method="POST">
                     @method('PATCH')
-                    @include('administrators.careers._form-career', ['btn' => 'Editar Carrera'])
+                    <h1 class="display-6 text-center">Editar Grupo</h1>
+                    <hr>
+                    @include('administrators.groups._form-group', ['btn' => 'Editar Grupo'])
                 </form>
                 @endauth
             </div>

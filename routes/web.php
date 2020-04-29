@@ -52,7 +52,12 @@ Route::prefix('docente')->namespace('Auth')->name('teacher.')->group(function(){
 });
 
 Route::middleware(['admins', 'auth:admin'])->group(function(){
-    Route::resource('administrar/carrera', 'CareerController')
-    ->parameters(['carrera' => 'career'])
+    Route::resource('administrar/carreras', 'CareerController')
+    ->parameters(['carreras' => 'career'])
     ->names('career');
+
+    Route::get('/listar/alumno',    'StudentController@index')  ->name('list.student');
+    Route::get('/listar/docente',   'TeacherController@index')  ->name('list.teacher');
+
+    Route::resource('administrar/grupos','GroupController')->parameters(['grupos' => 'group'])->names('group');
 });

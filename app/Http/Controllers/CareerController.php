@@ -16,7 +16,8 @@ class CareerController extends Controller
      */
     public function index()
     {
-        $careers = Career::latest()->paginate(4);
+        $careers = Career::latest()->paginate(10);
+
         return view('administrators.careers.index', compact('careers'));
     }
 
