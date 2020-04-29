@@ -16,9 +16,6 @@ Route::middleware(['teachers','auth:teacher'])->name('ptb.')->group(function () 
     route::view('mecanica',     'imports.ptb-Mecanica-Automotriz')  ->name('mecanica');
 });
 
-/** achievements **/
-route::view('logros-Parcial',   'achievements.logros-parcial')      ->name('logros.parcial');
-route::view('logros-Semestral', 'achievements.logros-semestral')    ->name('logros.semestral');
 
 /** Pendientes */
 Route::view('import','importar')                                    ->name('import');
@@ -60,4 +57,9 @@ Route::middleware(['admins', 'auth:admin'])->group(function(){
     Route::get('/listar/docente',   'TeacherController@index')  ->name('list.teacher');
 
     Route::resource('administrar/grupos','GroupController')->parameters(['grupos' => 'group'])->names('group');
+
+    /** achievements **/
+    route::view('logros-Parcial',   'achievements.logros-parcial')      ->name('logros.parcial');
+    route::view('logros-Semestral', 'achievements.logros-semestral')    ->name('logros.semestral');
+
 });
