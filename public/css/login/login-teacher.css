@@ -1,0 +1,45 @@
+*{
+ color: #ffffff;
+ font-family: 'PT Sans Narrow', sans-serif;
+}
+.bg {
+    background: linear-gradient(rgba(177, 175, 175, 0.58), rgba(7, 7, 7, 0.7)), url(/img/teacher-login.jpg);
+    height: 100vh; /*imagen 100% del alto de la ventana*/
+    background-size: cover; /*adapta la imagen al ancho de la pantalla*/
+    width: 100vh;
+    width: 100%;
+}
+
+.form-container{
+border: 1px solid #ffffff;
+padding: 50px 60px;
+margin-top: 20vh;
+-webkit-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+-moz-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+}
+
+label{
+    font-size: 20px;
+}
+
+.btn-success {
+    color: #f7f7f7 !important;
+    background-color: #077061ba !important;
+    border-color: #dee2e6 !important;
+}
+
+.btn-success:hover {
+    color: #f7f7f7 !important;
+    background-color: #037067 !important;
+    border-color: #dee2e6 !important;
+}
+
+.forgot a{
+    font-size: 17px;
+    color: #ffffff;
+}
+
+.forgot a:hover{
+    color: #05c5a5;
+}

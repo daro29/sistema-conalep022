@@ -1,6 +1,6 @@
 <span id="button-menu" class="fa fa-bars"></span>
 <!--nav del docente-->
-<nav class="navegacion">
+<nav class="navegacion" data-spy="scroll">
     <ul class="menu">
 
         <li class="title-menu"><span class="fa fa-home icon-menu"></span>Inicio</li>
@@ -33,18 +33,22 @@
             </ul>
         </li>
         @endauth
-
-        {{-- Logros --}}
+    |   @auth
+         {{-- Logros --}}
         <li class="item-submenu" menu="2">
             <a href="#"><span class="fas fa-trophy icon-menu"></span>Logros</a>
             <ul class="submenu">
-                <li class="title-menu"><span class="fas fa-medal icon-menu"></span>Logros</li>
+                <li class="title-menu"><span class="fas fa-chart-bar icon-menu"></span>Logros</li>
                 <li class="go-back">Atras</li>
                 <li><a href="{{ route('logros.parcial') }}">Parciales</a></li>
                 <li><a href="{{ route('logros.semestral') }}">Semestral</a></li>
             </ul>
         </li>
+
+        @endauth
+
         @auth('admin')
+            <li><a href="#"><span class="fas fa-file-import icon-menu"></span>Subir Archivo</a></li>
         {{-- Avisos Admin --}}
         <li class="item-submenu" menu="3">
             <a href="#"><span class="fas fa-envelope icon-menu"></span>Enviar Avisos</a>
@@ -67,12 +71,12 @@
         </li>
        {{-- Subir Archivos Admin --}}
         <li class=" item-submenu" menu="5">
-            <a href="#"><span class="fas fa-file-upload icon-menu"></span>Subir Archivos</a>
+            <a href="#"><span class="fas fa-file-upload icon-menu"></span>Administrar</a>
             <ul class="submenu">
-                <li class="title-menu"><span class="fas fa-file-upload icon-menu"></span>Subir Archivos</li>
+                <li class="title-menu"><span class="fas fa-file-upload icon-menu"></span>Registro</li>
                 <li class="go-back">Atras</li>
-                <li><a href="#">Subir Archivo</a></li>
-                <li><a href="#">Carreras</a></li>
+                <li><a href="{{ route('career.index') }}">Carreras</a></li>
+                <li><a href="#">Grupos</a></li>
             </ul>
         </li>
         @endauth

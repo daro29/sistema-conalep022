@@ -13,10 +13,10 @@ class SchoolSeeder extends Seeder
     public function run()
     {
         DB::table('schools')->insert([
-            'name'    => 'Conalep PLantel 022',
-            'telephone'  => '961 616 0553',
+            'name'      => 'Conalep Plantel 022',
+            'telephone' => '961 616 0553',
             'email'     => 'email@gmail.com',
-            'domicile' => ' Calle Libertad No. 654, Chiapa de Corzo Centro, 29160 Chiapa de Corzo, Chis.',
+            'domicile'  => ' Calle Libertad No. 654, Chiapa de Corzo Centro, 29160 Chiapa de Corzo, Chis.',
         ]);
     }
 }
