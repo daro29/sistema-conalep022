@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Group;
 use Illuminate\Http\Request;
+use App\Http\Requests\SaveGroupRequest;
 
 class GroupController extends Controller
 {
@@ -14,7 +15,9 @@ class GroupController extends Controller
      */
     public function index()
     {
-        //
+        $groups = Group::latest()->paginate(10);
+
+        return view('administrators.groups.index',compact('groups'));
     }
 
     /**
@@ -22,9 +25,9 @@ class GroupController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Group $group)
     {
-        //
+        return view('administrators.groups.create',compact('group'));
     }
 
     /**
@@ -33,9 +36,11 @@ class GroupController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SaveGroupRequest $request)
     {
-        //
+        Group::create($request->validated());
+
+        return redirect()->route('group.index')->with('status','Grupo creado con éxito');
     }
 
     /**
@@ -46,7 +51,7 @@ class GroupController extends Controller
      */
     public function show(Group $group)
     {
-        //
+        return view('administrators.groups.show',compact('group'));
     }
 
     /**
@@ -57,7 +62,7 @@ class GroupController extends Controller
      */
     public function edit(Group $group)
     {
-        //
+        return view ('administrators.groups.edit', compact('group'));
     }
 
     /**
@@ -67,9 +72,11 @@ class GroupController extends Controller
      * @param  \App\Group  $group
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Group $group)
+    public function update(Group $group, SaveGroupRequest $request)
     {
-        //
+        $group->update($request->validated());
+
+        return redirect()->route('group.show', $group)->with('status','El grupo se ha editado éxitosamente');
     }
 
     /**
@@ -80,6 +87,8 @@ class GroupController extends Controller
      */
     public function destroy(Group $group)
     {
-        //
+        $group->delete();
+
+        return redirect()->route('group.index')->with('status','Grupo eliminado exitosamente');
     }
 }

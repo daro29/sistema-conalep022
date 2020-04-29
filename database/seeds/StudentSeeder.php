@@ -1,5 +1,6 @@
 <?php
 
+use App\Student;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -12,6 +13,8 @@ class StudentSeeder extends Seeder
      */
     public function run()
     {
+        factory(Student::class,20)->create();
+
         DB::table('students')->insert([
             'name'        => 'darinel',
             'enrollment'     => '16270167',

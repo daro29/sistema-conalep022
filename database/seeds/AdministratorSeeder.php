@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class AdministratorSeeder extends Seeder
 {
@@ -14,7 +15,7 @@ class AdministratorSeeder extends Seeder
         DB::table('administrators')->insert([
             'name'      => 'Holly',
             'email'     => 'Holly_hollly71@yahoo.com',
-            'password'  => bcrypt('admin123'),
+            'password'  => bcrypt('123123'),
         ]);
     }
 }

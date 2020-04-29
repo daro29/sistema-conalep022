@@ -40,8 +40,8 @@
             <ul class="submenu">
                 <li class="title-menu"><span class="fas fa-chart-bar icon-menu"></span>Logros</li>
                 <li class="go-back">Atras</li>
-                <li><a href="{{ route('logros.parcial') }}">Parciales</a></li>
-                <li><a href="{{ route('logros.semestral') }}">Semestral</a></li>
+                <li><a href="{{ route('logros.parcial')     }}">Parciales</a></li>
+                <li><a href="{{ route('logros.semestral')   }}">Semestral</a></li>
             </ul>
         </li>
 
@@ -65,8 +65,8 @@
             <ul class="submenu">
                 <li class="title-menu"><span class="fas fa-list-ul icon-menu"></span>Lista Usuarios</li>
                 <li class="go-back">Atras</li>
-                <li><a href="#">Listar Alumnos</a></li>
-                <li><a href="#">Listar Docentes</a></li>
+                <li><a href="{{ route('list.student') }}">Listar Alumnos</a></li>
+                <li><a href="{{ route('list.teacher') }}">Listar Docentes</a></li>
             </ul>
         </li>
        {{-- Subir Archivos Admin --}}
@@ -75,8 +75,8 @@
             <ul class="submenu">
                 <li class="title-menu"><span class="fas fa-file-upload icon-menu"></span>Registro</li>
                 <li class="go-back">Atras</li>
-                <li><a href="{{ route('career.index') }}">Carreras</a></li>
-                <li><a href="#">Grupos</a></li>
+                <li><a href="{{ route('career.index')   }}">Carreras</a></li>
+                <li><a href="{{ route('group.index')    }}">Grupos</a></li>
             </ul>
         </li>
         @endauth
