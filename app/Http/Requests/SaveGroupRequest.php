@@ -24,7 +24,16 @@ class SaveGroupRequest extends FormRequest
     public function rules()
     {
         return [
-            'code'  => 'required|string',
+            'code'          =>  'required|string',
+            'careers_id'    =>  '',
         ];
+    }
+
+    public function messages()
+    {
+        return [
+            'careers_id.required' => 'Es necesario elegir una carreara para el grupo'
+        ];
+
     }
 }

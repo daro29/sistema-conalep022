@@ -14,11 +14,13 @@
 
                     <p class="text-black-50"><h5>Fecha de creación: </h5> {{ $group->created_at->diffForHumans() }}</p>
 
+                    <p class="text-black-50"><h5>Carreras asociadas al grupo: </h5> {{ $group->careers_id }}</p>
+
                     <div class="d-flex justify-content-between align-items-center">
                         <a href="{{ route('group.index') }}">Regresar</a>
                         @auth
                         <div class="btn-group btn-group">
-                            <a class="btn btn-primary" href="{{ route('group.edit', $group) }}">Editar Carrera</a>
+                            <a class="btn btn-primary" href="{{ route('group.edit', $group) }}">Editar grupo</a>
                             <a class="text-white btn btn-danger" onclick="event.preventDefault();
                                     document.getElementById('delete-group').submit();">Eliminar
                             </a>

@@ -10,7 +10,7 @@
             <div class="content-all">
                 @auth('admin')
                 <form class="px-4 shadow-lg p-3 mb-5 bg-white rounded p-3 mb-5 bg-white rounded" action="{{ route('group.store') }}" method="POST">
-                    <h1 class="display-6 text-center">Nueva Grupo</h1>
+                    <h1 class="display-6 text-center">Nuevo Grupo</h1>
                     <hr>
                     @include('administrators.groups._form-group', ['btn' => 'Crear Grupo'])
                 </form>
