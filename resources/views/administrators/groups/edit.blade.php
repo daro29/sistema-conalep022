@@ -1,6 +1,6 @@
 @extends('general._master')
 
-@section('title','Crear Carrera')
+@section('title','Crear Grupo')
 
 @section('content')
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Group;
+use App\Career;
 use Illuminate\Http\Request;
 use App\Http\Requests\SaveGroupRequest;
 
@@ -25,14 +26,16 @@ class GroupController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Group $group)
+    public function create(Group $group, Career $careers)
     {
-        return view('administrators.groups.create',compact('group'));
+        $careers = Career::all();
+
+        return view('administrators.groups.create',compact('group','careers'));
     }
 
     /**
      * Store a newly created resource in storage.
-     *
+     *u
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
@@ -49,9 +52,9 @@ class GroupController extends Controller
      * @param  \App\Group  $group
      * @return \Illuminate\Http\Response
      */
-    public function show(Group $group)
+    public function show(Group $group, Career $careers)
     {
-        return view('administrators.groups.show',compact('group'));
+        return view('administrators.groups.show',compact('group','careers'));
     }
 
     /**
@@ -60,9 +63,10 @@ class GroupController extends Controller
      * @param  \App\Group  $group
      * @return \Illuminate\Http\Response
      */
-    public function edit(Group $group)
+    public function edit(Group $group, Career $careers)
     {
-        return view ('administrators.groups.edit', compact('group'));
+        $careers = Career::all();
+        return view ('administrators.groups.edit', compact('group', 'careers'));
     }
 
     /**
