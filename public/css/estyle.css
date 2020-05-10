@@ -1,0 +1,78 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #333;
+    font-size: 1.2rem;
+    line-height: 1.4em;
+    background: #dcdcdc;
+    margin: 0;
+}
+
+
+h1{
+    font-size: 2rem;
+    line-height: 1.3em;
+
+}
+
+.admin{
+    width: 70px;
+    height: 96px;
+    position: relative;
+    left: 220px;
+    top: -140px;
+    z-index: 2;
+    font: condensed 200% sans-serif;
+
+ }
+
+ .docente{
+    width: 70px;
+    height: 96px;
+    position: relative;
+    left: 520px;
+    top: 130px;
+    z-index: 3;
+    font-family: cursive;
+
+ }
+ .estudiante{
+    width: 70px;
+    height: 96px;
+    position: relative;
+    left: 760px;
+    top: 420px;
+    z-index: 4;
+    font: condensed 200% sans-serif;
+   }
+
+p{
+    margin-bottom:  1.6em;
+}
+
+.conteiner{
+    width: 85%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.header{
+    background: #244623;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+     border-radius: 0 0 85% 85% / 30%;
+}
+.titulo{
+    text-align: center;
+    color: white;
+    font: condensed 200% sans-serif;
+}
+
+.logo-nav-conteiner{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.imagen{
+    width: 160px; height: 130px;
+}
