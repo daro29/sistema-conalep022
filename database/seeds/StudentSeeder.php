@@ -13,7 +13,7 @@ class StudentSeeder extends Seeder
      */
     public function run()
     {
-        factory(Student::class,20)->create();
+        factory(Student::class, 20)->create();
 
         DB::table('students')->insert([
             'name'        => 'darinel',

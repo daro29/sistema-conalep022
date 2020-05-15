@@ -18,6 +18,7 @@
     {{-- Bootpstrap --}}
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
     <script src="{{ asset('js/app.js') }}" defer></script>
+
     {{-- Fuente para la página --}}
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap">
 
@@ -29,7 +30,6 @@
     </main>
 
     <header>
-        {{-- @if (auth()->check() --}}
         @auth
         <a id="navbarDropdown" class="btn btn-outline-light float-right my-2 my-sm-0 nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
             {{ auth()->user()->name }} <span class="caret"></span>
@@ -47,17 +47,11 @@
             </form>
         </div>
         @endauth
-
-        {{-- @endif --}}
-
             @include('general._nav')
     </header>
-
-
-
-    <script src="{{ asset ('js/main.js') }}"></script>
-     <script src="{{ asset ('js/lineas.js') }}" charset="utf-8"></script>
-    <script src="https://kit.fontawesome.com/ad2035d795.js" crossorigin="anonymous"></script>
     </div>
+<script src="{{ asset ('js/main.js') }}"></script>
+<script src="{{ asset ('js/lineas.js') }}" charset="utf-8"></script>
+<script src="https://kit.fontawesome.com/ad2035d795.js" crossorigin="anonymous"></script>
 </body>
 </html>

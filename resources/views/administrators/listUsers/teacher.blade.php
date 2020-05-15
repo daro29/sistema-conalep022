@@ -23,7 +23,7 @@
 
                     @forelse ($teachers as $teacher)
                     <li class="list-group-item border-0 mb-3 shadow-sm align-items-center">
-                        <a class="d-flex justify-content-between" href="#">
+                        <a class="d-flex justify-content-between">
                             <span class="font-weight-bold">{{ $teacher->name }}</span>
                             <span class="text-black-50">{{ $teacher->created_at->format('d/m/Y') }}</span>
                         </a>

@@ -15,17 +15,11 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
 
-            $table->bigIncrements('id');
+            $table->id();
             $table->string('enrollment');
             $table->string('name');
             $table->string('password');
             $table->enum('role', ['admin', 'student', 'teacher'])->default('student');
-
-
-            $table->unsignedBigInteger('subjects_id')->nullable();
-            $table->foreign('subjects_id')
-            ->references('id')
-            ->on('subjects');
 
             $table->unsignedBigInteger('groups_id')->nullable();
             $table->foreign('groups_id')
