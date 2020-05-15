@@ -47,6 +47,9 @@ Route::prefix('docente')->namespace('Auth')->name('teacher.')->group(function(){
     Route::post('login',       'LoginTeacherController@login')           ->name('login');
     Route::get('area',         'LoginTeacherController@secret')          ->name('secret');
 });
+route::view('logros-Parcial',   'achievements.logros-parcial')      ->name('logros.parcial');
+    route::view('logros-Semestral', 'achievements.logros-semestral')    ->name('logros.semestral');
+
 
 Route::middleware(['admins', 'auth:admin'])->group(function(){
     Route::resource('administrar/carreras', 'CareerController')
@@ -59,7 +62,5 @@ Route::middleware(['admins', 'auth:admin'])->group(function(){
     Route::resource('administrar/grupos','GroupController')->parameters(['grupos' => 'group'])->names('group');
 
     /** achievements **/
-    route::view('logros-Parcial',   'achievements.logros-parcial')      ->name('logros.parcial');
-    route::view('logros-Semestral', 'achievements.logros-semestral')    ->name('logros.semestral');
-
+    
 });

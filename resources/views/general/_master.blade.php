@@ -8,6 +8,9 @@
     {{-- Personalizados --}}
     <link rel="stylesheet" href="{{ asset ('/css/estilos.css') }}">
     <link rel="stylesheet" href="{{ asset ('/css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset ('/css/estilos-index.css') }}">
+    <link href="{{ asset('/fonts/style.css') }}" rel="stylesheet">
+
 
     {{-- Morris --}}
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
