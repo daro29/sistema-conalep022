@@ -40,3 +40,15 @@
 .icon-v-card:before {
   content: "\e904";
 }
+.icon-search:before {
+  content: "\f002";
+}
+.icon-book:before {
+  content: "\f02d";
+}
+.icon-drivers-license-o:before {
+  content: "\f2c3";
+}
+.icon-id-card-o:before {
+  content: "\f2c3";
+}

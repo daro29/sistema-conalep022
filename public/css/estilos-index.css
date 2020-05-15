@@ -1,0 +1,40 @@
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 8px;
+    gap: 6em;
+    grid-template-rows: minmax(480px, auto);
+    
+    
+}
+.grid div{
+    
+    gap: 4em;
+    
+}
+
+.nested-grid{
+    justify-content: center;
+    border: 1px  solid white;
+    border-radius: 10px 5px 10px 5px;
+    box-shadow: 4px 4px 6px 6px gray;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 300px;
+    gap: 1em;
+
+}
+
+.aviso-grid{
+    border: 1px  solid white;
+    border-radius: 10px 5px 10px 5px;
+    box-shadow: 4px 4px 6px 6px gray;
+    grid-auto-rows: 300px;
+
+}
+
+h2.mensaje{
+    position: center;
+}
+
+
