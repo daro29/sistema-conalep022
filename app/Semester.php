@@ -6,5 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Semester extends Model
 {
-    protected $primarykey = "idsemestre";
+    protected $fillable = [
+        'name',
+    ];
+
+
+    public function students()
+    {
+        return $this->hasMany(Student::class);
+    }
 }

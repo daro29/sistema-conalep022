@@ -39,6 +39,7 @@ class CareerController extends Controller
      */
     public function store(SaveCareerRequest $request)
     {
+        dd($request);
         Career::create($request->validated());
 
         return redirect()->route('career.index')->with('status','Carrera creada con exito');

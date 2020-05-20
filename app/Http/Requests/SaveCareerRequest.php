@@ -24,8 +24,8 @@ class SaveCareerRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string',
-            'description' => 'required|string|min:20',
+            'name'          => 'required|string',
+            'description'   => 'required|string|min:20',
         ];
     }
 }

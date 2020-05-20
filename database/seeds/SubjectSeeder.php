@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Database\Seeder;
 use App\Subject;
+use Illuminate\Database\Seeder;
+
 class SubjectSeeder extends Seeder
 {
     /**
@@ -11,6 +12,14 @@ class SubjectSeeder extends Seeder
      */
     public function run()
     {
+        factory(Subject::class, 20)->create()->each(function(Subject $subject){
+            $subject->students()->attach([
+                rand(1,5),
+                rand(6,10),
+                rand(10,20),
+            ]);
+        });
+
        factory(Subject::class)->create([
         'name' => 'Matematicas',
        ]);

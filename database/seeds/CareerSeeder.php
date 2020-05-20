@@ -29,5 +29,17 @@ class CareerSeeder extends Seeder
             'created_at'    =>  '2018-01-15 16:51:57',
             'updated_at'    =>  '2018-01-15 16:51:57',
         ]);
+
+        DB::table('careers')->insert([
+            'name'          => 'Alimentos y bebidas',
+            'created_at'    =>  '2018-01-15 16:51:57',
+            'updated_at'    =>  '2018-01-15 16:51:57',
+        ]);
+
+        DB::table('careers')->insert([
+            'name'          => 'Electronica',
+            'created_at'    =>  '2018-01-15 16:51:57',
+            'updated_at'    =>  '2018-01-15 16:51:57',
+        ]);
     }
 }

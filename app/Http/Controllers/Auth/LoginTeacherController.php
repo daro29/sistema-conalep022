@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Notice;
+use App\School;
 use App\Teacher;
 use App\Http\Requests;
 use Illuminate\Http\Request;
@@ -42,7 +44,9 @@ class LoginTeacherController extends Controller
 
     public function secret()
     {
-       return view('home');
+        $school = School::select('name','domicile')->first();
+        $notices = Notice::latest()->get();
+        return view('home',compact('school','notices'));
     }
 
     public function logout(Request $request)

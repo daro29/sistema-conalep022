@@ -15,30 +15,28 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
 
-            $table->bigIncrements('id');
+            $table->id();
             $table->string('enrollment');
             $table->string('name');
             $table->string('password');
             $table->enum('role', ['admin', 'student', 'teacher'])->default('student');
-
-
-            $table->unsignedBigInteger('subjects_id')->nullable();
-            $table->foreign('subjects_id')
-            ->references('id')
-            ->on('subjects');
 
             $table->unsignedBigInteger('groups_id')->nullable();
             $table->foreign('groups_id')
             ->references('id')
             ->on('groups');
 
-            $table->unsignedBigInteger('assistances_id')->nullable();
-            $table->foreign('assistances_id')
+            $table->foreignId('career_id')->nullable()
+            ->constrained()
+            ->onDelete('cascade');
+
+            $table->unsignedBigInteger('assistance_id')->nullable();
+            $table->foreign('assistance_id')
             ->references('id')
             ->on('assistances');
 
-            $table->unsignedBigInteger('semesters_id')->nullable();
-            $table->foreign('semesters_id')
+            $table->unsignedBigInteger('semester_id');
+            $table->foreign('semester_id')
             ->references('id')
             ->on('semesters');
 

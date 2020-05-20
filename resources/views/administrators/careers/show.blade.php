@@ -17,7 +17,7 @@
 
                     <div class="d-flex justify-content-between align-items-center">
                         <a href="{{ route('career.index') }}">Regresar</a>
-                        @auth
+
                         <div class="btn-group btn-group">
                             <a class="btn btn-primary" href="{{ route('career.edit', $career) }}">Editar Carrera</a>
                             <a class="text-white btn btn-danger" onclick="event.preventDefault();
@@ -30,7 +30,7 @@
 
                             @csrf @method('DELETE')
                         </form>
-                        @endauth
+
                     </div>
                 </div>
             </div>

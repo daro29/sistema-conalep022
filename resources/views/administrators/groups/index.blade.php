@@ -13,11 +13,11 @@
 
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h1 class="display-4 mb-0">Grupos Registrados</h1>
-                    @auth('admin')
+
                     <strong>
                         <a class="btn btn-primary" href="{{ route('group.create') }}">Crear nueva grupo</a>
                     </strong>
-                    @endauth
+
                 </div>
 
                 <p class="lead text-secondary">
