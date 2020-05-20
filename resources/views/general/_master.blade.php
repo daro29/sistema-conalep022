@@ -17,8 +17,8 @@
 
     {{-- Bootpstrap --}}
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
+    {{-- <link href="{{ asset('css/app.css') defer}}" rel="stylesheet"> --}}
+    <script type="text/javascript" rel="script" src="{{ asset('js/app.js')}}"></script>
     {{-- Fuente para la página --}}
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap">
 
@@ -50,6 +50,7 @@
             @include('general._nav')
     </header>
     </div>
+@yield('scripts')
 <script src="{{ asset ('js/main.js') }}"></script>
 <script src="{{ asset ('js/lineas.js') }}" charset="utf-8"></script>
 <script src="https://kit.fontawesome.com/ad2035d795.js" crossorigin="anonymous"></script>

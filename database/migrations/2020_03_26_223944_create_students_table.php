@@ -26,13 +26,17 @@ class CreateStudentsTable extends Migration
             ->references('id')
             ->on('groups');
 
-            $table->unsignedBigInteger('assistances_id')->nullable();
-            $table->foreign('assistances_id')
+            $table->foreignId('career_id')->nullable()
+            ->constrained()
+            ->onDelete('cascade');
+
+            $table->unsignedBigInteger('assistance_id')->nullable();
+            $table->foreign('assistance_id')
             ->references('id')
             ->on('assistances');
 
-            $table->unsignedBigInteger('semesters_id')->nullable();
-            $table->foreign('semesters_id')
+            $table->unsignedBigInteger('semester_id');
+            $table->foreign('semester_id')
             ->references('id')
             ->on('semesters');
 

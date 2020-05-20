@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Semester;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -18,7 +19,7 @@ class Student extends Authenticatable
     protected $guard = 'student';
 
     protected $fillable = [
-        'name', 'enrollment', 'password',
+        'name', 'enrollment', 'password', 'role','semesters_id',
     ];
 
     /**
@@ -43,4 +44,15 @@ class Student extends Authenticatable
     {
         return $this->belongsToMany(Subject::class);
     }
+
+    public function semester()
+    {
+        return $this->belongsTo(Semester::class);
+    }
+
+    public function career()
+    {
+        return $this->belongsTo(Career::class);
+    }
+
 }

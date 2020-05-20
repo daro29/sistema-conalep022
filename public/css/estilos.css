@@ -9,85 +9,105 @@ main{
 	width: 100%;
     height: auto;
     position: absolute;
-    /* border:solid 5px rgb(216, 29, 100); */
-
-}
-
-.container-home{
-    margin-top: 130px;
-    /* border: solid 1px black; */
-    height: auto;
-	width: 100%;
-
-}
-
-.row{
     display: flex;
     justify-content: center;
+    align-content: center;
+    /* border:solid 2px rgb(236, 38, 11); */
 }
-
-.contenedor-padre{
+/* HOME */
+.container-home{
+    margin-top: 130px;
     width: 100%;
-    max-width: 2000px;
-    height: 450px;
-    /* padding: 5px; */
-    /* border: solid 1px gold; */
-    margin: 5px;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-}
-
-.contenedor{
-    /* color: #000000; */
-    margin: 5px;
-    text-align: center;
-    /* height: 50px; */
-}
-
-.contenedor1{
-    /* background: #0271A0; */
-    width: 50%;
-    flex-direction: row;
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: stretch;
-}
-.foto{
-    background-size: cover;
-    width: 400px;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background: url('../img/conalep.jpg') no-repeat fixed center; */
-    /* height: 350px; */
+    /* border: solid 1px black; */
+}
+
+.elemento h2{
+    font-size: 25px;
+}
+.elemento p{
+    font-size: 25px;
+}
+.contenedor2{
+    width: 100%;
+    height: auto;
+}
+.contenedor-padre{
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* border: solid 1px gold; */
+}
+
+.contenedor{
+    color: #000000;
+    margin: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+.contenedor1{
+    width: 55%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: stretch;
+    /* border: springgreen solid 2px; */
+}
+.foto{
+    background-size: cover;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: steelblue 1px solid; */
 }
 
 .foto img{
-    width: 100%;
-    height: 50%;
+    width: 95%;
+    height: 55%;
 }
 
+.conteiner{
+    width: 100%;
+    height: 100%;
+}
 .elementos{
-    /* background: purple; */
-    width: 60%;
+    width: 55%;
     display: flex;
     flex-direction: column;
-    /* height: 350px; */
+    /* border: steelblue 1px solid; */
 }
 
 .elemento{
     color:#000000;
     font-size: 15px;
+    border-bottom: 1px solid rgba(104, 104, 104, 0.548);
+    /* border: solid 1px #02592D; */
 }
-
 
 .contenedor2{
-    /* background: #02592D; */
-    width: 50%;
+    width: 40%;
 }
+
+.aviso{
+    border-top: 0.5px solid rgba(104, 104, 104, 0.548);
+}
+
+.aviso a{
+    font-size: 20px;
+}
+/*Termina Home */
 
 
 .content-all{
@@ -161,10 +181,6 @@ header #button-menu{
 	color: #fff;
 	cursor: pointer;
 }
-
-/* header .text-h{
-    font-size: 23px;
-} */
 
 .navegacion{
 	position: absolute;
@@ -375,3 +391,45 @@ article img{
 .userInformationContainer .advInfo p{
 	text-align: justify;
 }
+@media (min-width: 200px) and (max-width: 1000px) {
+
+	.contenedor1{
+		width: 100%;
+		padding-right: 50px;
+
+	}
+	.contenedor2{
+		width: 100%;
+    }
+    .foto img{
+        width: 250px;
+        height: 150px;
+    }
+}
+
+
+@media screen and (min-width:768px) and (max-width: 1050px)
+{
+	.contenedor1{
+        width: 100%;
+        height: auto;
+		padding-right: 50px;
+
+    }
+    .elemento h2{
+        font-size: 60px;
+    }
+    .elemento p{
+        font-size: 40px;
+    }
+	.contenedor2{
+        width: 100%;
+        height: auto;
+    }
+    .foto img{
+        width: 95%;
+        height: 450px;
+        margin: 5px;
+    }
+}
+

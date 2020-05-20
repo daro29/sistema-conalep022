@@ -14,9 +14,9 @@ class SchoolSeeder extends Seeder
     {
         DB::table('schools')->insert([
             'name'      => 'Conalep Plantel 022',
-            'telephone' => '961 616 0553',
+            'telephone' => '9616160553',
             'email'     => 'email@gmail.com',
-            'domicile'  => ' Calle Libertad No. 654, Chiapa de Corzo Centro, 29160 Chiapa de Corzo, Chis.',
+            'domicile'  => 'Calle Libertad barrio Benito Juárez No. 654, Chiapa de Corzo Centro',
         ]);
     }
 }

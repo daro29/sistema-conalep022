@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 
+use App\Notice;
 use App\Student;
+use App\Semester;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -43,7 +45,9 @@ class LoginStudentController extends Controller
 
     public function secret()
     {
-       return view('home');
+    //   $student = Student::where('id', auth()->user()->id)->first();
+        $notices = Notice::latest()->get();
+       return view('home',compact('notices'));
     }
 
     public function logout(Request $request)

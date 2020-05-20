@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Notice;
+use App\School;
 use App\Administrator;
 use App\Http\Requests;
 use Illuminate\Http\Request;
@@ -22,8 +24,9 @@ class LoginAdminController extends Controller
     // funcion que solo permite dejar acceder a los usuarios  si hace sesion
     function __construct()
     {
-        $this->middleware('admins:admin',  ['only' => ['secret']]);
-        $this->middleware('auth:admin',    ['only' => ['secret']]);
+        $this->middleware('admins:admin',   ['only' => ['secret']]);
+        $this->middleware('auth:admin',     ['only' => ['secret']]);
+
     }
 
     // retorna a vista login que se envia desde la ruta
@@ -41,7 +44,10 @@ class LoginAdminController extends Controller
 
     public function secret()
     {
-        return view('home');
+        $school = School::select('name','domicile')->first();
+        $notices = Notice::latest()->get();
+
+        return view('home', compact('school','notices'));
     }
 
     public function logout(Request $request)

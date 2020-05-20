@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class School extends Model
 {
-    protected $primarykey = "idescuela";
+    protected $fillable = [
+        'name', 'telephone','email','domicile',
+    ];
 }

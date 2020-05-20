@@ -19,6 +19,16 @@
                 <li><a href="{{ route('ptb.mecanica')     }}">ptb-Mecánica Automotriz</a></li>
             </ul>
         </li>
+          {{-- Logros --}}
+        <li class="item-submenu" menu="3">
+            <a href="#"><span class="fas fa-trophy icon-menu"></span>Logros</a>
+            <ul class="submenu">
+                <li class="title-menu"><span class="fas fa-chart-bar icon-menu"></span>Logros</li>
+                <li class="go-back">Atras</li>
+                <li><a href="{{     route('achievements.partial')     }}">Parciales</a></li>
+                <li><a href="{{     route('achievements.biannual')   }}">Semestral</a></li>
+            </ul>
+        </li>
         @endauth
 
         {{-- Información escolar --}}
@@ -34,17 +44,6 @@
         </li>
         @endauth
 
-        {{-- Logros --}}
-        <li class="item-submenu" menu="3">
-            <a href="#"><span class="fas fa-trophy icon-menu"></span>Logros</a>
-            <ul class="submenu">
-                <li class="title-menu"><span class="fas fa-chart-bar icon-menu"></span>Logros</li>
-                <li class="go-back">Atras</li>
-                <li><a href="{{     route('logros.parcial')     }}">Parciales</a></li>
-                <li><a href="{{     route('logros.semestral')   }}">Semestral</a></li>
-            </ul>
-        </li>
-
         @auth('admin')
 
         <li><a href="#"><span class="fas fa-file-import icon-menu"></span>Subir Archivo</a></li>
@@ -54,8 +53,7 @@
             <ul class="submenu">
                 <li class="title-menu"><span class="fas fa-envelope-open icon-menu"></span>Avisos</li>
                 <li class="go-back">Atras</li>
-                <li><a href="#">Aviso Docentes</a></li>
-                <li><a href="#">Aviso Alumnos</a></li>
+                <li><a href="{{ route('notices.index') }}">Gestionar Avisos</a></li>
             </ul>
         </li>
 

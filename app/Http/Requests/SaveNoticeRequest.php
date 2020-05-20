@@ -1,0 +1,41 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class SaveNoticeRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        return [
+            'title'     =>  'required|string',
+            'excerpt'   =>  'required|string',
+            'body'      =>  'required|min:10',
+            'status'    =>  'required|in:DRAFT,PUBLISHED',
+            'receiber'  =>  'required|in:TEACHER,STUDENT',
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'title.required' => 'Ingrese un titutlo para continuar'
+        ];
+
+    }
+}

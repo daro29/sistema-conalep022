@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function(){
     return view ('index');
 })->name('index');
-
+/** RUTAS TEACHERS */
 /** View PTB */
 Route::middleware(['teachers',  'auth:teacher'])->name('ptb.')->group(function () {
     route::view('autotronica',  'teachers.imports.ptb-Autotronica')          ->name('autotronica');
@@ -16,6 +16,11 @@ Route::middleware(['teachers',  'auth:teacher'])->name('ptb.')->group(function (
     route::view('mecanica',     'teachers.imports.ptb-Mecanica-Automotriz')  ->name('mecanica');
 });
 
+Route::middleware(['teachers', 'auth:teacher'])->name('achievements.')->group(function(){
+    route::view('logros-Parcial',   'achievements.logros-parcial')          ->name('partial');
+    route::view('logros-Semestral', 'achievements.logros-semestral')        ->name('biannual');
+});
+
 /** Pendientes */
 Route::view('import','importar')                                    ->name('import');
 Route::post('import-list-excel', 'ImportController@ImportExcel')    ->name('datos.import.excel');
@@ -23,7 +28,7 @@ Route::post('import-list-excel', 'ImportController@ImportExcel')    ->name('dato
 /** Contact */
 Route::view('contactanos','contacts.contact')->name('contact');
 
-/** Login */
+/** RUTAS DE LOGIN */
 Auth::routes(['register' => false]);
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -47,10 +52,7 @@ Route::prefix('docente')->namespace('Auth')->name('teacher.')->group(function(){
     Route::get('area',         'LoginTeacherController@secret')            ->name('secret');
 });
 
-/** achievements **/
-route::view('logros-Parcial',   'achievements.logros-parcial')             ->name('logros.parcial');
-route::view('logros-Semestral', 'achievements.logros-semestral')           ->name('logros.semestral');
-
+/* RUTAS DE ADMINISTRADOR */
 Route::middleware(['admins', 'auth:admin'])->group(function(){
     Route::resource('administrar/carreras', 'CareerController')
     ->parameters(['carreras' => 'career'])
@@ -58,6 +60,7 @@ Route::middleware(['admins', 'auth:admin'])->group(function(){
 
     Route::get('/listar/alumno',    'StudentController@index')  ->name('list.student');
     Route::get('/listar/docente',   'TeacherController@index')  ->name('list.teacher');
-    Route::resource('administrar/grupos','GroupController')     ->parameters(['grupos' => 'group'])->names('group');
-
+    Route::resource('administrar/grupos','GroupController')     ->parameters(['grupos'  => 'group'])->names('group');
+    Route::resource('administrar/avisos','NoticeController')    ->parameters(['avisos'   => 'notice'])->names('notices');
+    Route::get('aviso/modal','NoticeController@modalnotice')    ->name('notice.modal');
 });
