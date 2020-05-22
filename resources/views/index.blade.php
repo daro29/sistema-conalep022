@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
     <link href="{{ asset('/css/estyle.css') }}" rel="stylesheet">
-    <link href="{{ asset('/fonts/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('/fonts/style-icono.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>sisconalep022</title>
 </head>
@@ -28,10 +28,10 @@
         <div class="contenedor">
         <main class="main">
             <div class="estudiante">
-            <a href="{{ route('student.login') }}" class="text-dark"><h2 class="logo"><span class="icon-v-card">ESTUDIANTES</span></h2> </a>
+            <a href="{{ route('student.login') }}" class="text-dark"><h2 class="logo"><span class="icon-mortar-board">ESTUDIANTES</span></h2> </a>
             </div>
             <div class="docente">
-             <a href="{{ route('teacher.login') }}"class="text-dark"><h2 class="logo2"><span class="icon-users">DOCENTES</span></h2></a>
+             <a href="{{ route('teacher.login') }}"class="text-dark"><h2 class="logo2"><span class="icon-group">DOCENTES</span></h2></a>
             </div>
             <div class="admin">
                 <a href="{{ route('admin.login') }}" class="text-dark"><h2 class="logo3"><span class="icon-user">ADMINISTRADOR</span></h2></a>
