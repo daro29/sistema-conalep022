@@ -13,16 +13,13 @@
 
             <div class="contenedor elementos">
                 <div class="elemento elemento1">
-                    <h4 class="font-weight-bold">Nombre:</h4>
                 <h4 class="font-weight-bold"><span class="fas fa-user">Nombre:</h4>
-
                     <p>{{ auth()->user()->name }}</p>
                 </div>
 
                 {{-- Administrador --}}
                 @if( auth()->user()->role == 'admin' )
                 <div class="elemento elemento2">
-                    <h4 class="font-weight-bold">Email:</h4>
                     <h4 class="font-weight-bold"> <span class="fas fa-envelope-open-text">Email:</span> </h4>
                     <p>{{ auth()->user()->email }}</p>
                 </div>
@@ -36,7 +33,6 @@
                 </div>
 
                 <div class="elemento elemento5">
-                    <h4 class="font-weight-bold">Semestre:</h4>
                     <h4 class="font-weight-bold"><span class="icon-book-reference ml-3">Semestre:</span></h4>
                     <p> {{ auth()->user()->semester->name }}</p>
                 </div>

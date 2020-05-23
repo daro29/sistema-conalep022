@@ -9,12 +9,7 @@
     <link rel="stylesheet" href="{{ asset ('/css/estilos.css') }}">
     <link rel="stylesheet" href="{{ asset ('/css/main.css') }}">
     <link rel="stylesheet" href="{{ asset ('/css/estilos-index.css') }}">
-<<<<<<< HEAD
-    <link href="{{ asset('/fonts/style.css') }}" rel="stylesheet">
-=======
     <link href="{{ asset('/fonts/style-icono.css') }}" rel="stylesheet">
-
->>>>>>> 68d9a3f62f210676232afcac9353021fe9544619
 
 
     {{-- Morris --}}
