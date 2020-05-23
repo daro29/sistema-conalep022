@@ -11,7 +11,7 @@
 
 <body>
 
-    
+
         <header class="header">
             <div class="conteiner logo-nav-conteiner">
                 <img class="imagen" src="{{ asset('/img/conalep3.png') }}">
@@ -22,17 +22,13 @@
         </header>
         <!--https://codepen.io/armantaherian/pen/ZyZWVZ-->
         <!---->
-    
-        
+
+
 
         <div class="contenedor">
         <main class="main">
             <div class="estudiante">
-<<<<<<< HEAD
-            <a href="{{ route('student.login') }}" class="text-dark"><h2 class="logo"><span class="icon-v-card">ESTUDIANTES</span></h2> </a>
-=======
-            <a href="{{ route('student.login') }}" class="text-dark"><h2 class="logo"><span class="icon-drivers-license">ESTUDIANTES</span></h2> </a>
->>>>>>> 68d9a3f62f210676232afcac9353021fe9544619
+            <a href="{{ route('student.login') }}" class="text-dark"><h2 class="logo"><span class="icon-v-card">ESTUDIANTES</span></h2></a>
             </div>
             <div class="docente">
              <a href="{{ route('teacher.login') }}"class="text-dark"><h2 class="logo2"><span class="icon-users">DOCENTES</span></h2></a>
@@ -41,12 +37,12 @@
                 <a href="{{ route('admin.login') }}" class="text-dark"><h2 class="logo3"><span class="icon-user">ADMINISTRADOR</span></h2></a>
             </div>
         </main>
-    
+
     </div>
-    
+
         <footer></footer>
-    
-    
+
+
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
