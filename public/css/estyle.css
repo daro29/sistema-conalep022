@@ -11,7 +11,11 @@ body{
 h1{
     font-size: 2rem;
     line-height: 1.3em;
+}
 
+.icon-envelope-open:before{
+    content: "\f2b6";
+    margin-right: 5px !important;
 }
 
 .admin{
@@ -71,7 +75,7 @@ p{
 .logo-nav-conteiner{
     display: flex;
     justify-content: space-between;
-    
+    /* border: solid 1px red; */
 }
 .imagen{
     width: 160px; height: 130px;

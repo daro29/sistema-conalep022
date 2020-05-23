@@ -28,7 +28,11 @@
         <div class="contenedor">
         <main class="main">
             <div class="estudiante">
+<<<<<<< HEAD
             <a href="{{ route('student.login') }}" class="text-dark"><h2 class="logo"><span class="icon-v-card">ESTUDIANTES</span></h2> </a>
+=======
+            <a href="{{ route('student.login') }}" class="text-dark"><h2 class="logo"><span class="icon-drivers-license">ESTUDIANTES</span></h2> </a>
+>>>>>>> 68d9a3f62f210676232afcac9353021fe9544619
             </div>
             <div class="docente">
              <a href="{{ route('teacher.login') }}"class="text-dark"><h2 class="logo2"><span class="icon-users">DOCENTES</span></h2></a>
