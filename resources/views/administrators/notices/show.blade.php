@@ -8,16 +8,16 @@
         <div class="col-12 col-sm-10 col-lg-8 mx-auto">
             <div class="content-all">
                 @include('message.session-status')
-                <div class="bg-whithe p-5 shadow rounded">
+                <div class="bg-white p-5 shadow rounded">
 
-                    <h1 class="display-6">{{ $notice->title }}</h1>
+                    <h1 class="text-center display-6">{{ $notice->title }}</h1>
 
-                    <p class="text-secondary"><h5>Extracto: </h5> {{ $notice->excerpt }}</p>
-                    <p class="text-secondary"><h5>Contenido: </h5> {!! $notice->body !!}</p>
-                    <p class="text-black-50"><h5>Fecha de creación: </h5> {{ $notice->created_at->diffForHumans() }}</p>
+                    <p class="text-secondary"><h3>Extracto:       </h3> {{ $notice->excerpt }}</p>
+                    <p class="text-secondary"><h3>Contenido:      </h3> {!! $notice->body !!}</p>
+                    <p class="text-black-50"><h3>Fecha de creación:</h3> {{ $notice->created_at->diffForHumans() }}</p>
 
                     <div class="d-flex justify-content-between align-items-center">
-                        <a href="{{ route('notices.index') }}">Regresar</a>
+                        <a class="btn btn-outline-dark" href="{{ route('notices.index') }}">Regresar</a>
 
                         <div class="btn-group btn-group">
                             <a class="btn btn-primary" href="{{ route('notices.edit', $notice) }}">Editar Aviso</a>
