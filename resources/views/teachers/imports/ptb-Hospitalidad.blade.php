@@ -10,7 +10,7 @@
                 <form class="px-4 shadow-lg p-3 mb-5 bg-white rounded" action="#" method="POST">
                     <h1 class="display-6 text-center">Técnico Bachiller | Hospitalidad</h1>
                     <hr>
-                    @include('teachers.imports._form-ptb')
+                    @include('teachers.partials._form-ptb')
                 </form>
             </div>
         </div>

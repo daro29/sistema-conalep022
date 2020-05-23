@@ -16,11 +16,12 @@ class StudentsImport implements ToModel,WithHeadingRow
     public function model(array $row)
     {
         return new Student([
-            'matricula' => $row['matricula'],
-            'nombre'    => $row['nombre'],
+            'enrollment'    => $row['matricula'],
+            'name'          => $row['nombre'],
+
         ]);
     }
-    
+
     public function headingRow(): int
     {
         return 8;

@@ -22,7 +22,7 @@ class GroupsImport implements ToModel, WithMappedCells
     public function model(array $row)
     {
         return new Group([
-            'clave' => $row ['clave'],
+            'code' => $row ['clave'],
         ]);
     }
 }

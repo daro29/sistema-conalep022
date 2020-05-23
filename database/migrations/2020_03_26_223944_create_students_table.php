@@ -18,7 +18,7 @@ class CreateStudentsTable extends Migration
             $table->id();
             $table->string('enrollment');
             $table->string('name');
-            $table->string('password');
+            $table->string('password')->nullable();
             $table->enum('role', ['admin', 'student', 'teacher'])->default('student');
 
             $table->unsignedBigInteger('groups_id')->nullable();
@@ -35,7 +35,7 @@ class CreateStudentsTable extends Migration
             ->references('id')
             ->on('assistances');
 
-            $table->unsignedBigInteger('semester_id');
+            $table->unsignedBigInteger('semester_id')->nullable();
             $table->foreign('semester_id')
             ->references('id')
             ->on('semesters');

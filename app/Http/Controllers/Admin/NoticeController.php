@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Notice;
 use Illuminate\Http\Request;
-use App\Http\Requests\SaveNoticeRequest;
+use App\Http\Controllers\Controller;
 
 class NoticeController extends Controller
 {

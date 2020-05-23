@@ -25,7 +25,7 @@
                     <li class="list-group-item border-0 mb-3 shadow-sm align-items-center">
                         <a class="d-flex justify-content-between text-body">
                             <span class="font-weight-bold">{{$student->name }}</span>
-                            <span class="text-black-50">{{ $student->created_at->format('d/m/Y') }}</span>
+                            <span class="text-black-50">Registro: {{ $student->created_at->format('d/m/Y') }}</span>
                         </a>
                     </li>
                     @empty
