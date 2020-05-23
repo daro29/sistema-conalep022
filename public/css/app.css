@@ -1,5 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);
- @charset "UTF-8"; 
+@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
 /*!
  * Bootstrap v4.4.1 (https://getbootstrap.com/)
@@ -10903,11 +10902,15 @@ span {
   margin-right: 12px;
 }
 
-.icon-university:before {
+.fa-university:before {
   margin-right: 12px;
 }
 
-.icon-location:before {
+.fa-map-marked-alt:before {
   margin-right: 5px;
+}
+
+.fa-comment-alt:before {
+  margin-right: 12px;
 }
 
