@@ -13,14 +13,17 @@
 
             <div class="contenedor elementos">
                 <div class="elemento elemento1">
-                <h4 class="font-weight-bold"><span class="icon-address-book-o">Nombre:</h4>
+                    <h4 class="font-weight-bold">Nombre:</h4>
+                <h4 class="font-weight-bold"><span class="fas fa-user">Nombre:</h4>
+
                     <p>{{ auth()->user()->name }}</p>
                 </div>
 
                 {{-- Administrador --}}
                 @if( auth()->user()->role == 'admin' )
                 <div class="elemento elemento2">
-                    <h4 class="font-weight-bold"> <span class="icon-send">Email:</span> </h4>
+                    <h4 class="font-weight-bold">Email:</h4>
+                    <h4 class="font-weight-bold"> <span class="fas fa-envelope-open-text">Email:</span> </h4>
                     <p>{{ auth()->user()->email }}</p>
                 </div>
 
@@ -28,28 +31,29 @@
                 {{-- Estudiante --}}
                 @if(auth()->user()->role=='student')
                 <div class="elemento elemento4">
-                <h4 class="font-weight-bold"><span class="icon-book">Carrera:</span></h4>
+                    <h4 class="font-weight-bold">Carrera:</h4>
                     <p>{{ auth()->user()->career->name }}</p>
                 </div>
 
                 <div class="elemento elemento5">
-                    <h4 class="font-weight-bold"><span class="icon-book-reference">Semestre:</span></h4>
+                    <h4 class="font-weight-bold">Semestre:</h4>
+                    <h4 class="font-weight-bold"><span class="icon-book-reference ml-3">Semestre:</span></h4>
                     <p> {{ auth()->user()->semester->name }}</p>
                 </div>
 
                 <div class="elemento elemento6">
-                    <h4 class="font-weight-bold"><span class="icon-drivers-license-o">Matricula:</span></h4>
+                    <h4 class="font-weight-bold">Matricula:</h4>
                     <p>{{ auth()->user()->enrollment }}</p>
                 </div>
                 @endif
                 {{-- Docente y administrador --}}
                 @if (auth()->user()->role=='teacher' || auth()->user()->role=='admin')
                 <div class="elemento elemento7">
-                    <h4 class="font-weight-bold"><span class="icon-university">Plantel:</span></h4>
+                    <h4 class="font-weight-bold">Plantel:</h4>
                     <p>{{ $school->name }}</p>
                 </div>
                 <div class="elemento elemento8">
-                    <h2 class="font-weight-bold"><span class="icon-location">Dirección:</span></h2>
+                    <h4 class="font-weight-bold">Dirección:</h4>
                     <p>{{ $school->domicile }}</p>
                 </div>
                 @endif
@@ -58,7 +62,7 @@
         </div>
 
         <div class="contenedor contenedor2 shadow p-3 mb-5 bg-white rounded">
-            <h4 class="font-weight-bold p-3 mb-2 bg-dark text-white"><span class="icon-envelope-open">Mensajes:</span></h4>
+            <h4 class="font-weight-bold p-3 mb-2 bg-dark text-white">Mensajes:</h4>
             @forelse ($notices as $notice)
             <div class="elemento aviso">
                 <h4 class="font-weight-bold">{{ $notice->title }}</h4>
