@@ -13,14 +13,14 @@
 
             <div class="contenedor elementos">
                 <div class="elemento elemento1">
-                <h4 class="font-weight-bold"><span class="icon-address-book-o">Nombre:</h4>
+                <h4 class="font-weight-bold"><span class="fas fa-user">Nombre:</h4>
                     <p>{{ auth()->user()->name }}</p>
                 </div>
 
                 {{-- Administrador --}}
                 @if( auth()->user()->role == 'admin' )
                 <div class="elemento elemento2">
-                    <h4 class="font-weight-bold"> <span class="icon-send">Email:</span> </h4>
+                    <h4 class="font-weight-bold"> <span class="fas fa-envelope-open-text">Email:</span> </h4>
                     <p>{{ auth()->user()->email }}</p>
                 </div>
 
@@ -33,7 +33,7 @@
                 </div>
 
                 <div class="elemento elemento5">
-                    <h4 class="font-weight-bold"><span class="icon-book-reference">Semestre:</span></h4>
+                    <h4 class="font-weight-bold"><span class="icon-book-reference ml-3">Semestre:</span></h4>
                     <p> {{ auth()->user()->semester->name }}</p>
                 </div>
 
