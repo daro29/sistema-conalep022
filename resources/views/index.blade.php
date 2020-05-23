@@ -28,7 +28,7 @@
         <div class="contenedor">
         <main class="main">
             <div class="estudiante">
-            <a href="{{ route('student.login') }}" class="text-dark"><h2 class="logo"><span class="icon-drivers-license">ESTUDIANTES</span></h2> </a>
+            <a href="{{ route('student.login') }}" class="text-dark"><h2 class="logo"><span class="icon-user-circle">ESTUDIANTES</span></h2> </a>
             </div>
             <div class="docente">
              <a href="{{ route('teacher.login') }}"class="text-dark"><h2 class="logo2"><span class="icon-group">DOCENTES</span></h2></a>
