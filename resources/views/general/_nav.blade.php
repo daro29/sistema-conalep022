@@ -21,9 +21,9 @@
         </li>
           {{-- Logros --}}
         <li class="item-submenu" menu="3">
-            <a href="#"><span class="icon-line-chart"></span>Logros</a>
+            <a href="#"><span class="icon-line-chart icon-menu"></span>Logros</a>
             <ul class="submenu">
-                <li class="title-menu"><span class="icon-line-chart"></span>Logros</li>
+                <li class="title-menu"><span class="icon-line-chart icon-menu"></span>Logros</li>
                 <li class="go-back">Atras</li>
                 <li><a href="{{     route('achievements.partial')     }}">Parciales</a></li>
                 <li><a href="{{     route('achievements.biannual')   }}">Semestral</a></li>
@@ -34,9 +34,9 @@
         {{-- Información escolar --}}
         @auth('student')
         <li class="item-submenu" menu="2">
-            <a href="#"><span class="icon-book-reference"></span>Información Escolar</a>
+            <a href="#"><span class="icon-book-reference icon-menu"></span>Información Escolar</a>
             <ul class="submenu">
-                <li class="title-menu"><span class="icon-book-reference"></span>Información Escolar</li>
+                <li class="title-menu"><span class="icon-book-reference icon-menu"></span>Información Escolar</li>
                 <li class="go-back">Atras</li>
                 <li><a href="#">Calificaciones Parciales</a></li>
                 <li><a href="#">Boletas</a></li>
@@ -46,10 +46,10 @@
 
         @auth('admin')
 
-        <li><a href="#"><span class="icon-archive"></span>Subir Archivo</a></li>
+        <li><a href="#"><span class="icon-archive icon-menu"></span>Subir Archivo</a></li>
         {{-- Avisos Admin --}}
         <li class="item-submenu" menu="4">
-            <a href="#"><span class="icon-send"></span>Enviar Avisos</a>
+            <a href="#"><span class="icon-send icon-menu"></span>Enviar Avisos</a>
             <ul class="submenu">
                 <li class="title-menu"><span class="fas fa-envelope-open icon-menu"></span>Avisos</li>
                 <li class="go-back">Atras</li>
@@ -59,9 +59,9 @@
 
         {{-- Subir Archivos Admin --}}
         <li class=" item-submenu" menu="6">
-            <a href="#"><span class="icon-folder"></span>Administrar</a>
+            <a href="#"><span class="icon-folder icon-menu"></span>Administrar</a>
             <ul class="submenu">
-                <li class="title-menu"><span class="icon-add-user"></span>Registro</li>
+                <li class="title-menu"><span class="icon-add-user icon-menu"></span>Registro</li>
                 <li class="go-back">Atras</li>
                 <li><a href="{{ route('career.index')   }}">Crear Carreras</a></li>
                 <li><a href="{{ route('group.index')    }}">Crear Grupos</a></li>
@@ -73,9 +73,9 @@
 
         @endauth
 
-        <li><a href="{{ route('contact') }}"><span class="icon-address-book"></span>Contacto</a></li>
+        <li><a href="{{ route('contact') }}"><span class="icon-address-book icon-menu"></span>Contacto</a></li>
 
-        <a class="icon-cross" href="{{ route('logout') }}" onclick="event.preventDefault();
+        <a class="icon-cross icon-menu" href="{{ route('logout') }}" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
             <span>Cerrar Sesión</span>
         </a>
