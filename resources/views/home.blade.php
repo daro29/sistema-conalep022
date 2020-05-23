@@ -20,7 +20,7 @@
                 {{-- Administrador --}}
                 @if( auth()->user()->role == 'admin' )
                 <div class="elemento elemento2">
-                    <h4 class="font-weight-bold"> <span class="fas fa-envelope-open-text">Email:</span> </h4>
+                    <h4 class="font-weight-bold"> <span class="icon-envelop"> Email:</span> </h4>
                     <p>{{ auth()->user()->email }}</p>
                 </div>
 
@@ -28,7 +28,7 @@
                 {{-- Estudiante --}}
                 @if(auth()->user()->role=='student')
                 <div class="elemento elemento4">
-                    <h4 class="font-weight-bold">Carrera:</h4>
+                    <h4 class="font-weight-bold"><span class="icon-education"> Carrera:</span></h4>
                     <p>{{ auth()->user()->career->name }}</p>
                 </div>
 
@@ -38,18 +38,18 @@
                 </div>
 
                 <div class="elemento elemento6">
-                    <h4 class="font-weight-bold">Matricula:</h4>
+                    <h4 class="font-weight-bold"><span class="icon-drivers-license"> Matricula:</span></h4>
                     <p>{{ auth()->user()->enrollment }}</p>
                 </div>
                 @endif
                 {{-- Docente y administrador --}}
                 @if (auth()->user()->role=='teacher' || auth()->user()->role=='admin')
                 <div class="elemento elemento7">
-                    <h4 class="font-weight-bold">Plantel:</h4>
+                    <h4 class="icon-home2"> Plantel:</h4>
                     <p>{{ $school->name }}</p>
                 </div>
                 <div class="elemento elemento8">
-                    <h4 class="font-weight-bold">Dirección:</h4>
+                    <h4 class="font-weight-bold"><span class="icon-location"> Dirección:</span></h4>
                     <p>{{ $school->domicile }}</p>
                 </div>
                 @endif
@@ -58,7 +58,7 @@
         </div>
 
         <div class="contenedor contenedor2 shadow p-3 mb-5 bg-white rounded">
-            <h4 class="font-weight-bold p-3 mb-2 bg-dark text-white">Mensajes:</h4>
+            <h4 class="font-weight-bold p-3 mb-2 bg-dark text-white"><span class="icon-mail"> Mensajes:</span></h4>
             @forelse ($notices as $notice)
             <div class="elemento aviso">
                 <h4 class="font-weight-bold">{{ $notice->title }}</h4>
