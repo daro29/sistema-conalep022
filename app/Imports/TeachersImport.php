@@ -16,13 +16,15 @@ class TeachersImport implements ToModel, WithMappedCells
     public function mapping(): array
     {
         return [
-            'nombre' => 'B1',
+            'nombre'        =>  'B1',
+            'contraseña'    =>  'E1'
         ];
     }
     public function model(array $row)
     {
         return new Teacher([
-            'nombre' => $row ['nombre'],
+            'name'      => $row ['nombre'],
+            'password'  => bcrypt($row ['contraseña']),
         ]);
     }
 }

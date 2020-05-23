@@ -21,4 +21,4 @@
 </div>
 <br>
 <input class="btn btn-outline-success  btn-lg btn-block" type="submit" value="Importar">
-<a class="btn btn-lg btn-light btn-block" href="#">Regresar</a>
+<a class="btn btn-lg btn-light btn-block" href="{{ route('home') }}">Regresar</a>

@@ -1,15 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Career;
 use Illuminate\Http\Request;
-use App\Http\Requests\SaveCareerRequest;
-
+use App\Http\Controllers\Controller;
 
 class CareerController extends Controller
 {
-    /**
+     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
