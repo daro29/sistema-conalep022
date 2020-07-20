@@ -54,8 +54,11 @@
     </header>
     </div>
 @yield('scripts')
+<script src="{{ asset ('js/animation.js') }}"></script>
+<script src="{{ asset ('js/notices.js') }}"></script>
 <script src="{{ asset ('js/main.js') }}"></script>
 <script src="{{ asset ('js/lineas.js') }}" charset="utf-8"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://kit.fontawesome.com/ad2035d795.js" crossorigin="anonymous"></script>
 </body>
 </html>

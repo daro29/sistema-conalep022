@@ -4,6 +4,12 @@
 
 @section('content')
 
+            <!-- carga -->
+            <div id="contenedor_carga">
+        <div id="carga"></div>
+    </div>
+    <!-- fin de carga -->
+
 <div class="container-home">
     <div class="contenedor-padre">
         <div class="contenedor contenedor1 shadow p-3 mb-5 bg-white rounded">
@@ -63,12 +69,13 @@
 
         <div class="contenedor contenedor2 shadow p-3 mb-5 bg-white rounded">
 
-            <h4 class="font-weight-bold"><span class="fas fa-comment-alt ml-3">Mensajes:</span></h4>
+            <h4 class="font-weight-bold">
+            <span class="fas fa-comment-alt ml-3">Mensajes:</span></h4>
 
             @forelse ($notices as $notice)
             <div class="elemento aviso">
                 <h4 class="font-weight-bold">{{ $notice->title }}</h4>
-                <a type="button" class="btn btn-light btn-block"  href="{{ $notice->id }}" data-toggle="modal" data-target="#staticBackdrop">{{ $notice->excerpt }}</a>
+                <a type="button" id="notices" class="btn btn-light btn-block"  href="{{ $notice->id }}" data-toggle="modal" data-target="#staticBackdrop">{{ $notice->excerpt }}</a>
             </div>
             @empty
             <p>No hay mensajes disponibles</p>
@@ -84,9 +91,9 @@
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header"> 
         <h5 class="modal-title" id="staticBackdropLabel">{{ $notice->title }}</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button"  class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -101,4 +108,7 @@
 </div>
 @endisset
 
+
 @endsection
+ 
+
