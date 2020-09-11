@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ asset ('/css/estilos.css') }}">
     <link rel="stylesheet" href="{{ asset ('/css/main.css') }}">
     <link rel="stylesheet" href="{{ asset ('/css/estilos-index.css') }}">
+    <link rel="stylesheet" href="{{ asset ('/css/estilos-boleta.css') }}">
     <link href="{{ asset('/fonts/style-iconos.css') }}" rel="stylesheet">
 
 
@@ -55,6 +56,7 @@
     </div>
 @yield('scripts')
 <script src="{{ asset ('js/main.js') }}"></script>
+<script src="{{ asset ('js/notice.js') }}"></script>
 <script src="{{ asset ('js/lineas.js') }}" charset="utf-8"></script>
 <script src="https://kit.fontawesome.com/ad2035d795.js" crossorigin="anonymous"></script>
 </body>
