@@ -38,7 +38,7 @@
             <ul class="submenu">
                 <li class="title-menu"><span class="icon-book-reference"></span>Información Escolar</li>
                 <li class="go-back">Atras</li>
-                <li><a href="#">Calificaciones Parciales</a></li>
+                <li><a href="{{ route('ReportCardsPartial') }}">Calificaciones Parciales</a></li>
                 <li><a href="{{ route('ReportCards') }}">Boletas</a></li>
             </ul>
         </li>

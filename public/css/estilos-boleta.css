@@ -1,14 +1,10 @@
-/* body {
-    font-family: sans-serif;
-    line-height: 1.5;
-} */
-
 .container {
     width: 100%;
     max-width: 100%;
     margin: auto;
+    padding: 10px;
+    border-radius: 2%;
 }
-
 
 .table {
     width: 100%;
@@ -16,39 +12,24 @@
     border-collapse: collapse;
     margin: 1px;
     padding: 1px;
-    table-layout: fixed;
-}
-
-.table caption {
-    font-size: 30px;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin: 8px 0px;
 }
 
 .table tr {
-    background-color: #f8f8f8;
-    border: 1px solid #bbb;
+    background-color: white;
 }
 
 .table th, .table td {
-    font-size: 12px;
+    font-size: 14px;
     padding: 8px;
     text-align: left;
 }
 
 .table thead th{
-    text-transform: uppercase;
-    background-color: #bbb
+    font-size: 12px;
+    font-family: 'Roboto','sans-serif';
+    background-color: white;
 }
-
-.table tbody tr:hover {
-    background-color: rgba(0, 0, 0, 0.2);
-}
-
-/* .table tbody td:hover {
-    background-color: rgba(0, 0, 0, 0.3);
-} */
+/* la tabla hace el quiebre en 600px */
 
 @media screen and (max-width: 600px) {
     .table {
@@ -64,13 +45,14 @@
         margin-bottom: 10px;
         border-bottom: 6px solid #bbb;
         display: block;
+        padding: 4px;
     }
     .table th, .table td {
         font-size: 12px;
     }
     .table td {
         display: block;
-        /* border-bottom: 1px solid #ddd; */
+        border-bottom: 1px solid #ddd;
         text-align: right;
     }
     .table  td:last-child {
@@ -79,7 +61,6 @@
     .table td::before {
         content: attr(data-label);
         font-weight: bold;
-        text-transform: uppercase;
         float: left;
     }
 

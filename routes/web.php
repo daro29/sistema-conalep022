@@ -26,7 +26,8 @@ route::view('logros-Semestral', 'achievements.logros-semestral')        ->name('
 Route::view('contactanos','contacts.contact')->name('contact');
 
 /** student */
-Route::get('ReportCards', 'ReportCardsController@index')       ->name('ReportCards');
+Route::get('ReportCards', 'ReportCardsController@index')                     ->name('ReportCards');
+Route::get('ReportCardsPartial', 'ReportCardsPartialController@index')       ->name('ReportCardsPartial');
 
 /** RUTAS DE LOGIN */
 Auth::routes(['register' => false]);
