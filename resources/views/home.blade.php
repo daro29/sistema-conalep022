@@ -46,16 +46,20 @@
                 @endif
                 {{-- Docente y administrador --}}
                 @if (auth()->user()->role=='teacher' || auth()->user()->role=='admin')
+                @isset($school)
+
                 <div class="elemento elemento7">
 
                     <h4 class="font-weight-bold"><span class="fas fa-university ml-3">Plantel:</span></h4>
                     <p>{{ $school->name }}</p>
+
                 </div>
                 <div class="elemento elemento8">
                     <h4 class="font-weight-bold"><span class="fas fa-map-marked-alt ml-3">Ubicación:</span></h4>
 
                     <p>{{ $school->domicile }}</p>
                 </div>
+                @endisset
                 @endif
 
             </div>

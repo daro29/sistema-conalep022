@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Maatwebsite\Excel\Facades\Excel;
-use App\Imports\StudentsImport;
-use App\Imports\TeachersImport;
-use App\Imports\GroupsImport;
-
+use App\Group;
 use App\Student;
 use App\Teacher;
-use App\Group;
+use Illuminate\Http\Request;
+use App\Imports\GroupsImport;
+
+use App\Imports\StudentsImport;
+use App\Imports\SubjectsImport;
+use App\Imports\TeachersImport;
+use App\Imports\QualificationImport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ImportController extends Controller
 {
@@ -19,8 +21,10 @@ class ImportController extends Controller
         $file = $request->file('file');
 
         Excel::import(new StudentsImport, $file);
+        Excel::import(new SubjectsImport, $file);
         Excel::import(new TeachersImport, $file);
         Excel::import(new GroupsImport, $file);
+        // Excel::import(new QualificationImport, $file);
         return back()->with('status', 'Datos capturados exitosamente');
     }
 }

@@ -42,7 +42,7 @@ class Student extends Authenticatable
 
     public function subjects()
     {
-        return $this->belongsToMany(Subject::class);
+        return $this->belongsToMany(Subject::class)->withTimestamps();
     }
 
     public function semester()
@@ -54,5 +54,4 @@ class Student extends Authenticatable
     {
         return $this->belongsTo(Career::class);
     }
-
 }
