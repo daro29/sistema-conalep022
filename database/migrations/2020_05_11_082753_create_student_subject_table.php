@@ -16,13 +16,18 @@ class CreateStudentSubjectTable extends Migration
         Schema::create('student_subject', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('subject_id')
-            ->constrained()
-            ->onDelete('cascade');
+            $table->float('qualification')->nullable();
 
             $table->foreignId('student_id')
             ->constrained()
+            ->onUpdate('cascade')
             ->onDelete('cascade');
+
+            $table->foreignId('subject_id')
+            ->constrained()
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+
 
             $table->timestamps();
         });
